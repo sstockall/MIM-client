@@ -1,0 +1,36 @@
+@use '../../styles/global' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom:1px solid rgba(216, 216 , 216, .5);
+    padding: 1rem;
+    background-image: linear-gradient(to right, $background-blue, white);
+    
+
+    &__logo {
+        color: blueviolet;
+        border-radius: 50%;
+    }
+
+    &__logo-letter {
+        font-size: 2rem;
+        font-weight: 800;
+        text-shadow: -0.08em 0.03em 0.12em rgba(0, 0, 0, 0.9);
+    }
+
+    &__nav {
+
+    }
+
+    &__nav-link {
+        color: black;
+    }
+}
+
+div span:not(:first-child) {
+    margin-left: -0.15rem;
+}

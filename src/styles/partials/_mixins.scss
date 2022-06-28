@@ -1,0 +1,31 @@
+@use './variables' as *;
+
+@mixin tablet {
+    @media (min-width: $tablet-breakpoint) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: $desktop-breakpoint) {
+        @content;
+    }
+}
+
+@font-face {
+    font-family: 'Playfair Display';
+    src: url('../../assets//fonts/PlayfairDisplay-Regular.ttf') format("truetype");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Playfair Display';
+    src: url('../../assets//fonts/PlayfairDisplay-Regular.ttf') format("truetype");
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Playfair Display';
+    src: url('../../assets//fonts/PlayfairDisplay-Regular.ttf') format("truetype");
+    font-weight: 800;
+}
