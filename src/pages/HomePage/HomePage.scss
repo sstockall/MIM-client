@@ -1,0 +1,30 @@
+@use '../../styles/global' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.home {
+    
+    &__hero {
+        background-color: $light-grey;
+        background: url('../../assets/images/molepic1.jpeg') rgba(0, 134, 179, 0.3);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-blend-mode: multiply;
+        padding: 2rem;
+    }
+
+    &__hero-header {
+        padding: 1rem;
+        font-weight: 800;
+    }
+    &__hero-text {
+
+        &--mim {
+
+        }
+    }
+      
+    &__background {
+
+    }
+}
