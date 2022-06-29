@@ -6,18 +6,21 @@
     
     &__hero {
         background-color: $light-grey;
-        background: url('../../assets/images/molepic1.jpeg') rgba(0, 134, 179, 0.3);
+        background: url('../../assets/images/molepic1.jpeg') rgba(0, 134, 179, 0.2);
         background-repeat: no-repeat;
         background-size: cover;
         background-blend-mode: multiply;
-        padding: 2rem;
+        padding: 1rem;
+        padding-bottom: 5rem;
     }
 
     &__hero-header {
-        padding: 1rem;
+        padding: 1rem 0;
         font-weight: 800;
+        text-align: left;
     }
     &__hero-text {
+        text-align: left;
 
         &--mim {
 
@@ -27,4 +30,25 @@
     &__background {
 
     }
+
+    &__info {
+
+    }
+
+    &__info-header {
+
+    }
+
+    &__info-text {
+
+    }
+           
+    &__info-cta {
+
+    }
+
+    &__info-link {
+        color: $primary-text;
+    }
+                
 }
