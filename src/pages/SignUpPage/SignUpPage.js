@@ -1,58 +1,62 @@
+import './SignUpPage.scss';
 import { NavLink } from 'react-router-dom';
-import './SignUpPage.scss'
+import { Component } from 'react';
+import axios from 'axios';
+import InputField from '../../components/InputField/InputField';
 
-function SignUpPage() {
-    return ( 
-        <section className="signup">
-            <div className='signup__hero'>
-                <h1 className='signup__hero-header'>Stop worrying and start tracking</h1>
-            </div>
-            <form className="signup__form">
-                <h2 className='signup__form-header'>Start tracking your moles today!</h2>
-                <div className='signup__form-name'>
-                    <label className='signup__form-label' htmlFor=''>First Name</label>
-                    <input 
-                        className='signup__form-input'
-                        name='first_name'
-                        id='first_name'
-                        placeholder='First Name'
-                        type='text'
-                    />
-                    <label className='signup__form-label' htmlFor=''>Last Name</label>
-                    <input 
-                        className='signup__form-input'
-                        name='last_name'
-                        id='last_name'
-                        placeholder='Last Name'
-                        type='text'
-                    />
+class SignUpPage extends Component {
+    state = {
+        errorMessage: '',
+        signedUp: false
+    }
+
+    handleSignUp = (e) => {
+        e.preventDefault();
+        axios
+            .post("http://localhost:8080/signup", {
+                email: e.target.email.value,
+                password: e.target.password.value,
+                first_name: e.target.first_name.value,
+                last_name: e.target.last_name.value,
+                username: e.target.username.value
+            })
+            .then(() => {
+                this.setState({ signedUp: true, errorMessage: "" });
+                e.target.reset();
+                this.history.push('/login')
+            })
+            .catch((error) => {
+                this.setState({ signedUp: false });
+                console.log(error)
+            });
+    };
+
+    render() {
+        return ( 
+            <section className="signup">
+                <div className='signup__inner'>
+                    <div className='signup__hero'>
+                        <h1 className='signup__hero-header'>Stop worrying and start tracking</h1>
+                    </div>
+                    <form className="signup__form" onSubmit={this.handleSignUp}>
+                        <h2 className='signup__form-header'>Start tracking your moles today!</h2>
+                        <div className='signup__form-inputs'>
+                            <InputField className='signup__form-field'type="text" name="first_name" label="First name" />
+                            <InputField className='signup__form-field'type="text" name="last_name" label="Last name" />
+                            <InputField className='signup__form-field'type="text" name="username" label="Username" />
+                            <InputField className='signup__form-field'type="text" name="email" label="Email" />
+                            <InputField className='signup__form-field'type="password" name="password" label="Password" />
+                        </div>
+                        <div className='signup__form-submit'>
+                            <button className='signup__form-button'>Create Account</button>
+                            <span className='signup__form-text'>Already have an account?</span>
+                            <NavLink to='/login' className='signup__form-login'>Sign In</NavLink>
+                        </div>
+                    </form>
                 </div>
-                <div className='signup__form-userinfo'>
-                    <label className='signup__form-label' htmlFor=''>Username</label>
-                    <input 
-                        className='signup__form-input'
-                        name='username'
-                        id='username'
-                        placeholder='Username'
-                        type='text'
-                    />
-                    <label className='signup__form-label' htmlFor=''>Password</label>
-                    <input 
-                        className='signup__form-input'
-                        name='password'
-                        id='password'
-                        placeholder='Password'
-                        type='password'
-                    />
-                </div>
-                <div className='signup__form-submit'>
-                    <button className='signup__form-button'>Create Account</button>
-                    <span className='signup__form-login'>Already have an account?</span>
-                    <NavLink to='/login'>Sign In</NavLink>
-                </div>
-            </form>
-        </section>
-     );
+            </section>
+        );
+    }
 }
 
 export default SignUpPage;

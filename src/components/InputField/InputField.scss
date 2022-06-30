@@ -1,0 +1,21 @@
+@use '../../styles/global' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.input-field {
+    display: flex;
+    flex-direction: column;
+
+    &__label {
+        margin-bottom: 0.5rem;
+    }
+
+    &__input {
+        margin-bottom: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 0.5rem;
+        padding: 0.5rem;
+        font-size: inherit;
+        width: 10rem;
+    }
+}

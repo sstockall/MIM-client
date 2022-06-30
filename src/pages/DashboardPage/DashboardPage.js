@@ -2,7 +2,7 @@ import './DashboardPage.scss'
 import { Component } from 'react';
 import axios from 'axios';
 
-class Dashboard extends Component { 
+class DashboardPage extends Component { 
     state = {
       isLoading: true,
       userInfo: {}
@@ -12,17 +12,19 @@ class Dashboard extends Component {
       let token = sessionStorage.getItem('authToken');
   
       if (!!token) {
-        axios.get('http://', {
+        axios.get('http://localhost:8080/dashboard', {
           headers: {
             Authorization: `Bearer ${token}`
           }
         })
         .then(res => {
-          console.log(res)
           this.setState({
             userInfo: res.data,
             isLoading: false
           })
+        })
+        .catch((err) => {
+          console.log(err)
         })
   
       } else {

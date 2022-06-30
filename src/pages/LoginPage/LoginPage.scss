@@ -1,0 +1,62 @@
+@use '../../styles/global' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.login {
+    display: flex;
+    justify-content: center;
+   background-color: $slate;
+
+    &__inner {
+        width: 90%;
+        border-radius: 3px;
+        box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+        background-color: $light-grey;
+    }
+    
+    &__hero {
+
+    }
+
+    &__hero-header {
+
+    }
+
+    &__form {
+
+    }
+
+    &__form-userinfo {
+
+    }
+
+    &__form-field {
+        display: flex;
+        padding: 0.5rem;
+    }
+
+    &__form-label {
+
+    }
+
+    &__form-input {
+
+    }
+
+    &__form-submit {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__form-button {
+
+    }
+
+    &__form-login {
+
+    }
+
+    &__form-link {
+        color: $primary-text;
+    }
+}                    
