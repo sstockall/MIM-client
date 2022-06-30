@@ -3,39 +3,68 @@
 @use '../../styles/partials/mixins' as *;
 
 .home {
-    
+    background: url('../../assets/images/molepic1.jpeg') rgba(0, 134, 179, 0.2);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: multiply;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+
+    &__inner {
+        margin: 1rem 0;
+        width: 90%;
+    }
     &__hero {
         background-color: $light-grey;
-        background: url('../../assets/images/molepic1.jpeg') rgba(0, 134, 179, 0.2);
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-blend-mode: multiply;
-        padding: 1rem;
+        padding: 0.5rem;
         padding-bottom: 5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 3px solid $background-blue;
     }
 
     &__hero-header {
-        padding: 1rem 0;
+        padding-bottom: 1rem;
         font-weight: 800;
+        font-size: 1.7rem;
         text-align: left;
     }
+
+    &__hero-textbox {
+        width: 50%;
+    }
+
     &__hero-text {
-        text-align: left;
+        font-size: 0.7rem;
+        line-height: 1rem;
+        padding: 0.5rem 0;
 
         &--mim {
 
         }
     }
-      
-    &__background {
-
-    }
 
     &__info {
+        display: flex;
+        justify-content: center;
+    }
 
+    &__info-inner {
+        width: 90%;
+        border-radius: 5px;
+        box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+        margin-top: -2rem;
+        background-color: $background-blue;
+        padding: 0.5rem;
     }
 
     &__info-header {
+
+    }
+
+    &__info-textbox {
 
     }
 

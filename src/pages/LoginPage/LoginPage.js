@@ -11,8 +11,7 @@ class LoginPage extends Component {
     }
 
     handleLogin = (e) => {
-        e.preventDefault();
-
+        e.preventDefault()
         axios
             .post('http://localhost:8080/login', {
                 email: e.target.email.value,
@@ -21,7 +20,7 @@ class LoginPage extends Component {
             .then((response) => {
                 sessionStorage.setItem("token", response.data.token);
                 this.setState({ loggedIn: true });
-                this.history.push('/dashboard')
+                this.props.history.push('/dashboard')
             })
             .catch((error) => {
                 this.setState({ errorMessage: error.response.data });
@@ -35,7 +34,7 @@ class LoginPage extends Component {
                     <div className='login__hero'>
                         <h1 className='login__hero-header'>Stop worrying and start tracking</h1>
                     </div>
-                    <form className='login__form'>
+                    <form className='login__form' onSubmit={this.handleLogin}>
                         <div className='login__form-userinfo'>
                             <div className='login__form-field'>
                                 <InputField className='signup__form-field'type="text" name="email" label="Email" />
@@ -43,7 +42,7 @@ class LoginPage extends Component {
                             </div>
                         </div>
                         <div className='login__form-submit'>
-                            <button className='login__form-button'>Create Account</button>
+                            <button className='login__form-button'>Log In</button>
                             <span className='login__form-login'>Need an account?</span>
                             <NavLink to='/signup' className='login__form-link'>Create One!</NavLink>
                         </div>

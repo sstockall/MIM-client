@@ -23,7 +23,7 @@ class SignUpPage extends Component {
             .then(() => {
                 this.setState({ signedUp: true, errorMessage: "" });
                 e.target.reset();
-                this.history.push('/login')
+                this.props.history.push('/login')
             })
             .catch((error) => {
                 this.setState({ signedUp: false });

@@ -5,12 +5,13 @@ import axios from 'axios';
 class DashboardPage extends Component { 
     state = {
       isLoading: true,
-      userInfo: {}
+      userInfo: {},
+      userRecords: []
     }
   
     componentDidMount() {
-      let token = sessionStorage.getItem('authToken');
-  
+      let token = sessionStorage.getItem('token');
+     
       if (!!token) {
         axios.get('http://localhost:8080/dashboard', {
           headers: {
@@ -18,29 +19,29 @@ class DashboardPage extends Component {
           }
         })
         .then(res => {
+          console.log(res)
           this.setState({
-            userInfo: res.data,
+            userInfo: res.data.user,
+            userRecords: res.data.records,
             isLoading: false
           })
         })
         .catch((err) => {
           console.log(err)
         })
-  
-      } else {
-        this.props.history.push('/login')
       }
     }
   
     render() {
-      const {userInfo, isLoading } = this.state;
+      const { userInfo, isLoading } = this.state;
+      console.log(userInfo)
       return isLoading ?
         <>Loading...</>
       :
       (
         <>
           <h1>Dashboard</h1>
-          <h2>Welcome, {userInfo.name}</h2>
+          <h2>Welcome, {userInfo.first_name}</h2>
         </>
       )
     }
