@@ -7,7 +7,9 @@
     flex-direction: column;
 
     &__label {
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.3rem;
+        text-align: left;
+        font-size: 0.8rem;
     }
 
     &__input {
@@ -16,6 +18,10 @@
         border-radius: 0.5rem;
         padding: 0.5rem;
         font-size: inherit;
-        width: 10rem;
+        width: auto;
+
+        @include tablet {
+            width: 10rem;
+        }
     }
 }

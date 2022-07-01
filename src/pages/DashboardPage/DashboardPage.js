@@ -1,6 +1,7 @@
 import './DashboardPage.scss'
 import { Component } from 'react';
 import axios from 'axios';
+import diagram from '../../assets/images/anatomy-diagram.png'
 
 class DashboardPage extends Component { 
     state = {
@@ -33,17 +34,25 @@ class DashboardPage extends Component {
     }
   
     render() {
-      const { userInfo, isLoading } = this.state;
-      console.log(userInfo)
+      const { userInfo, isLoading, userRecords } = this.state;
+      console.log(userInfo, userRecords)
       return isLoading ?
-        <>Loading...</>
+        <div className='loading'>
+          <h2 className='loading__text'>Loading...</h2>
+        </div>
       :
-      (
-        <>
-          <h1>Dashboard</h1>
-          <h2>Welcome, {userInfo.first_name}</h2>
-        </>
-      )
+        (
+          <main className='dashboard'>
+            <div className='dashboard__inner'>
+              <div className='dashboard__header'>
+                <h1 className='dashboard__header-text'>hey {userInfo.first_name}</h1>
+              </div>
+              <div className='dashboard__diagram'>
+                <img className='dashboard__diagram--img'src={diagram} alt='diagram' />
+              </div>
+            </div>
+          </main>
+        )
     }
   }
 

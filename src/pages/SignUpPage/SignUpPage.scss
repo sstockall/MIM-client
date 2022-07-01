@@ -8,11 +8,9 @@
 
     &__inner {
         width: 90%;
-        border-radius: 3px;
-        box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
-        background-color: $light-grey;
         display: flex;
         flex-direction: column;
+        margin: 1rem 0;
 
         @include tablet {
             flex-direction: row;
@@ -21,19 +19,28 @@
     }
     
     &__hero {
-        background-color: $slate;
+        background-color: $cloud;
+        border-radius: 3px;
+        box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
     }
 
     &__hero-header {
-
+        padding: 3rem 0;
     }
 
     &__form {
-
+        border-radius: 3px;
+        box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        background-color: $light-grey;
     }
 
     &__form-header {
-
+        text-align: left;
+        padding-bottom: 1rem;
+        font-size: 1.25rem;
     }
 
     &__form-inputs {
@@ -45,14 +52,16 @@
     }
 
     &__form-submit {
-
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     &__form-button {
-
+        margin-bottom: 1rem;
     }
 
     &__form-login {
-        color: $primary-text;
+        color: $slate;
     }
 }

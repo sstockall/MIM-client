@@ -5,33 +5,34 @@
 .login {
     display: flex;
     justify-content: center;
-   background-color: $slate;
 
     &__inner {
         width: 90%;
-        border-radius: 3px;
-        box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
         background-color: $light-grey;
     }
     
     &__hero {
-
+        border-radius: 3px;
+        box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+        padding: 1rem;
     }
 
     &__hero-header {
-
+        padding: 3rem 0;
     }
 
     &__form {
-
+        border-radius: 3px;
+        box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+        padding: 1rem;
     }
 
     &__form-userinfo {
-
+        display: flex;
+        flex-direction: column;
     }
 
     &__form-field {
-        display: flex;
         padding: 0.5rem;
     }
 
@@ -46,10 +47,11 @@
     &__form-submit {
         display: flex;
         flex-direction: column;
+        align-items: center;
     }
 
     &__form-button {
-
+        margin-bottom: 1rem;
     }
 
     &__form-login {
@@ -57,6 +59,6 @@
     }
 
     &__form-link {
-        color: $primary-text;
+        color: $slate;
     }
 }                    

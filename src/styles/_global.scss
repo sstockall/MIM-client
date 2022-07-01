@@ -16,3 +16,21 @@ a {
     text-decoration: none;
     color: white;
 }
+
+button {
+    background-color: $background-blue;
+    color: $primary-text;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 4px;
+    font-family: 'Playfair Display', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    font-size: 0.9rem;
+
+    &:hover {
+        cursor: pointer;
+        background-color: $primary-text;
+        color: white;
+    }
+
+}

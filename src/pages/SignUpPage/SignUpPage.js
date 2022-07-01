@@ -36,13 +36,13 @@ class SignUpPage extends Component {
             <section className="signup">
                 <div className='signup__inner'>
                     <div className='signup__hero'>
-                        <h1 className='signup__hero-header'>Stop worrying and start tracking</h1>
+                        <h1 className='signup__hero-header'>Stop Worrying. Start Tracking</h1>
                     </div>
                     <form className="signup__form" onSubmit={this.handleSignUp}>
                         <h2 className='signup__form-header'>Start tracking your moles today!</h2>
                         <div className='signup__form-inputs'>
-                            <InputField className='signup__form-field'type="text" name="first_name" label="First name" />
-                            <InputField className='signup__form-field'type="text" name="last_name" label="Last name" />
+                            <InputField className='signup__form-field'type="text" name="first_name" label="First Name" />
+                            <InputField className='signup__form-field'type="text" name="last_name" label="Last Name" />
                             <InputField className='signup__form-field'type="text" name="username" label="Username" />
                             <InputField className='signup__form-field'type="text" name="email" label="Email" />
                             <InputField className='signup__form-field'type="password" name="password" label="Password" />

@@ -1,0 +1,43 @@
+@use '../../styles/global' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.loading {
+          
+    &__text {
+
+    }
+}
+
+.dashboard {
+    display: flex;
+    justify-content: center;
+
+    &__inner {
+        width: 90%;
+        background-color: $light-grey;
+        margin: 1rem 0;
+        border-radius: 5px;
+        box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.7);
+    }
+    
+    &__header {
+
+    }
+    
+    &__header-text {
+
+    }
+              
+    &__diagram {
+        display: none;
+
+        @include tablet {
+            display: flex;
+        }
+        &--img {
+            border-radius: 5px;
+            box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.4);
+        }
+    }
+}
