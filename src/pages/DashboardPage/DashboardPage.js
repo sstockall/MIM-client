@@ -7,7 +7,8 @@ class DashboardPage extends Component {
     state = {
       isLoading: true,
       userInfo: {},
-      userRecords: []
+      userRecords: [],
+      showModal: false
     }
   
     componentDidMount() {
@@ -32,6 +33,14 @@ class DashboardPage extends Component {
         })
       }
     }
+
+    toRecords = () => {
+      this.props.history.push('/dashboard/records')
+    }
+
+    newRecord = () => {
+      this.setState({ showModal: true })
+    }
   
     render() {
       const { userInfo, isLoading, userRecords } = this.state;
@@ -46,6 +55,14 @@ class DashboardPage extends Component {
             <div className='dashboard__inner'>
               <div className='dashboard__header'>
                 <h1 className='dashboard__header-text'>hey {userInfo.first_name}</h1>
+              </div>
+              <div className='dashboard__new'>
+                <span className='dashboard__new-text'>Got a new mole?</span>
+                <button className='dashboard__new-button' onClick={this.newRecord}>New Record</button>
+              </div>
+              <div className='dashboard__records'>
+                <span className='dashboard__records-text'>Existing mole looking different?</span>
+                <button className='dashboard__records-button'onClick={this.toRecords}>Edit Record</button>
               </div>
               <div className='dashboard__diagram'>
                 <img className='dashboard__diagram--img'src={diagram} alt='diagram' />
