@@ -2,6 +2,7 @@ import './DashboardPage.scss'
 import { Component } from 'react';
 import axios from 'axios';
 import diagram from '../../assets/images/anatomy-diagram.png'
+import NewMole from '../../components/NewMole/NewMole';
 
 class DashboardPage extends Component { 
     state = {
@@ -41,6 +42,14 @@ class DashboardPage extends Component {
     newRecord = () => {
       this.setState({ showModal: true })
     }
+
+    cancelRecord = () => {
+      this.setState({ showModal: false})
+    }
+
+    submitRecord = () => {
+
+    }
   
     render() {
       const { userInfo, isLoading, userRecords } = this.state;
@@ -52,6 +61,11 @@ class DashboardPage extends Component {
       :
         (
           <main className='dashboard'>
+            <NewMole 
+            show={this.state.showModal}
+            hideModal={this.cancelRecord}
+            submitHandler={this.submitRecord}
+            />
             <div className='dashboard__inner'>
               <div className='dashboard__header'>
                 <h1 className='dashboard__header-text'>hey {userInfo.first_name}</h1>
