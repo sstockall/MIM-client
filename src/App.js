@@ -19,7 +19,7 @@ function App() {
           <Route path='/login' exact component={LoginPage}/>
           <Route path='/signup' exact component={SignUpPage}/>
           <Route path='/dashboard' exact component={DashboardPage}/>
-          <Route path='dashboard/records' exact component={RecordsPage}/>
+          <Route path='dashboard/records' component={RecordsPage}/>
         </Switch>
         <Footer />
       </BrowserRouter>

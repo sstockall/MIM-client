@@ -1,0 +1,48 @@
+@use '../../styles/global' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.record {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 0.5rem;
+    padding-left: 0.5rem;
+    border: 1px solid $secondary-blue;
+
+    &__header {
+        font-size: 0.7rem;
+        text-align: left;
+    }
+
+    &__text {
+        font-size: 0.7rem;
+    }
+
+    &__date {
+        @include record-box;
+    }
+              
+    &__location {
+        @include record-box;
+    }
+
+    &__width {
+        @include record-box;
+    }
+
+    &__length {
+        @include record-box;
+    }
+
+    &__texture {
+        @include record-box;
+    }
+
+    &__coloring {
+        @include record-box;
+    }
+
+    &__special {
+        @include record-box;
+    }
+}
