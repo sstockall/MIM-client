@@ -9,16 +9,19 @@
     &__inner {
         width: 90%;
         background-color: $light-grey;
+        margin: 1rem;
+        box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.5)
     }
     
     &__hero {
+        background-image: url('../../assets/images/dermatoscope.jpg');
+        background-size: cover;
         border-radius: 3px;
-        box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
-        padding: 1rem;
     }
 
     &__hero-header {
-        padding: 3rem 0;
+        padding: 0.5rem 0 7rem 0.5rem;
+        text-align: left;
     }
 
     &__form {
@@ -30,6 +33,15 @@
     &__form-userinfo {
         display: flex;
         flex-direction: column;
+    }
+
+    &__form-header {
+
+        &--text {
+            font-size: 1rem;
+            font-style: italic;
+            padding-bottom: 0.5rem;
+        }
     }
 
     &__form-field {

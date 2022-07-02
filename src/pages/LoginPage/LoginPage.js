@@ -32,10 +32,13 @@ class LoginPage extends Component {
             <section className="login">
                 <div className='login__inner'>
                     <div className='login__hero'>
-                        <h1 className='login__hero-header'>Stop worrying and start tracking</h1>
+                        <h1 className='login__hero-header'>Hello Again!</h1>
                     </div>
                     <form className='login__form' onSubmit={this.handleLogin}>
                         <div className='login__form-userinfo'>
+                            <div className='login__form-header'>
+                                <h2 className='login__form-header--text'>Sign in to your account</h2>
+                            </div>
                             <div className='login__form-field'>
                                 <InputField className='signup__form-field'type="text" name="email" label="Email" />
                                 <InputField className='signup__form-field'type="password" name="password" label="Password" />

@@ -15,6 +15,7 @@ function Header() {
             <nav className='header__nav'>
                 <NavLink to='/login' className='header__nav-link'>Login</NavLink>
                 <NavLink to='/signup' className='header__nav-link'>SignUp</NavLink>
+                <NavLink to='/dashboard' className='header__nav-link'>Dashboard</NavLink>
             </nav>
         </header>
      );

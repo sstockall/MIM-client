@@ -17,7 +17,6 @@
     }
     &__hero {
         background-color: $light-grey;
-        border: 3px solid $background-blue;
         border-radius: 5px;
         padding: 0.5rem;
         padding-bottom: 5rem;
@@ -38,7 +37,7 @@
     }
 
     &__hero-text {
-        font-size: 0.7rem;
+        font-size: $body-fontsize;
         line-height: 1rem;
         padding: 0.5rem 0;
 
@@ -62,24 +61,79 @@
     }
 
     &__info-header {
+        text-align: right;
+        font-size: 1.2rem;
+        padding: 0.5rem;
 
+        &--mim {
+
+        }
     }
 
     &__info-textbox {
-
+        text-align: left;
+        padding: 0 0.5rem;
     }
 
     &__info-text {
+        font-size: $body-fontsize;
+    }
 
+    &__info-list {
+        padding: 0.5rem 1rem;
+        list-style-type: circle;
+    }
+
+    &__list-item {
+        font-size: $body-fontsize;
     }
            
     &__info-cta {
-
+        text-align: left;
+        font-size: $body-fontsize;
+        padding: 0.5rem;
+        
     }
 
     &__info-link {
-        color: $slate;
+        color: white;
         padding-right: 0.5rem;
+    }
+
+    &__lesions {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__lesions-inner {
+        width: 90%;
+        border-radius: 5px;
+        box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.7);
+        background-color: $background-blue;
+        padding: 0.5rem;
+        margin: 1rem 0;
+    }
+
+    &__lesions-header {
+        font-size: 1.2rem;
+        padding: 0.5rem;
+        text-align: right;
+    }
+
+    &__lesions-text {
+       display: flex;
+       flex-direction: column;
+       padding: 0.5rem;
+    }
+
+    &__lesions-span {
+        font-size: $body-fontsize;
+        text-align: left;
+    }
+
+    &__lesions-link {
+        color: white;
+        font-size: $body-fontsize;
     }
                 
 }
