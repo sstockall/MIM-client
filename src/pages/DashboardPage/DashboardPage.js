@@ -38,7 +38,7 @@ class DashboardPage extends Component {
     }
 
     toRecords = () => {
-      this.props.history.push('/dashboard/records')
+      this.props.history.push('/records')
     }
 
     newRecord = () => {
@@ -71,7 +71,6 @@ class DashboardPage extends Component {
   
     render() {
       const { userInfo, isLoading, userRecords } = this.state;
-      console.log(userInfo, userRecords)
       return isLoading ?
         <div className='loading'>
           <h2 className='loading__text'>Loading...</h2>

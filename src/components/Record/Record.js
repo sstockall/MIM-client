@@ -12,7 +12,7 @@ function Record({ id, location, width, length, texture, coloring, special, date}
                 <h4 className='record__header'>Location: </h4>
                 <span className='record__text'>{location}</span>
             </div>
-            <div className='record__width'>
+            {/* <div className='record__width'>
                 <h4 className='record__header'>Width: </h4>
                 <span className='record__text'>{width}</span>
             </div>
@@ -31,7 +31,7 @@ function Record({ id, location, width, length, texture, coloring, special, date}
             <div className='record__special'>
                 <h4 className='record__header'>Special Info: </h4>
                 <span className='record__text'>{special}</span>
-            </div>
+            </div> */}
         </div>
      );
 }

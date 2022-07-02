@@ -6,16 +6,17 @@
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 0.5rem;
-    padding-left: 0.5rem;
     border: 1px solid $secondary-blue;
 
     &__header {
         font-size: 0.7rem;
         text-align: left;
+        padding-right: 0.5rem;
     }
 
     &__text {
         font-size: 0.7rem;
+        text-align: left;
     }
 
     &__date {
