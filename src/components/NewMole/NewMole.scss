@@ -47,6 +47,21 @@
         
     }
 
+    &__form-label {
+        margin-bottom: 0.3rem;
+        text-align: left;
+        font-size: 0.8rem;
+    }
+
+    &__form-textarea {
+        margin-bottom: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 0.5rem;
+        padding: 0.5rem;
+        font-size: inherit;
+        width: 100%;
+    }
+
     &__buttons {
 
     }
@@ -58,11 +73,12 @@
     &__cancel-button {
 
     }
-
-    // &__display-none {
-//     display: none;
-// } 
-&__display-block {
-
 }
+
+.display-none {
+    display: none;
+}
+
+.display-block {
+    display: block;
 }

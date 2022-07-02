@@ -47,8 +47,23 @@ class DashboardPage extends Component {
       this.setState({ showModal: false})
     }
 
-    submitRecord = () => {
-
+    submitRecord = (e) => {
+      axios.post('http://localhost:8080/dashboard/records', {
+        location: e.target.location.value,
+        width: e.target.width.value,
+        length: e.target.length.value,
+        texture: e.target.texture.value,
+        coloring: e.target.coloring.value,
+        user_id: this.state.userInfo.id
+      })
+      .then((res) => {
+        console.log(res)
+        e.target.reset();
+        
+    })
+    .catch((error) => {
+        console.log(error)
+    });
     }
   
     render() {

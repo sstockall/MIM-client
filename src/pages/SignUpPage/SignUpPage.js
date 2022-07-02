@@ -25,9 +25,9 @@ class SignUpPage extends Component {
                 e.target.reset();
                 this.props.history.push('/login')
             })
-            .catch((error) => {
+            .catch((err) => {
                 this.setState({ signedUp: false });
-                console.log(error)
+                console.error(err)
             });
     };
 

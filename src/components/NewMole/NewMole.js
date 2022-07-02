@@ -19,6 +19,8 @@ function NewMole( { show, submitHandler, hideModal }) {
                                 <InputField className='new-mole__form-field'type="text" name="length" label="Length" placeholder="2cm, 3mm..." />
                                 <InputField className='new-mole__form-field'type="text" name="texture" label="Texture" placeholder="Raised, flat..." />
                                 <InputField className='new-mole__form-field'type="text" name="color" label="Coloring" placeholder="Light brown, black, skin colored..." />
+                                <label htmlFor='special-info' className='new-mole__form-label'>Special Info</label>
+                                <textarea className='new-mole__form-textarea' name='special-info' />
                             </div>
                             <div className='new-mole__buttons'>
                                 <button className='new-mole__submit-button'onClick={submitHandler}>Create Record</button>
