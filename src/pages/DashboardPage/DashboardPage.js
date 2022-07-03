@@ -1,76 +1,89 @@
 import './DashboardPage.scss'
-import { Component } from 'react';
 import axios from 'axios';
 import diagram from '../../assets/images/anatomy-diagram.png'
 import NewMole from '../../components/NewMole/NewMole';
 import RecordList from '../../components/RecordList/RecordList';
+import { useState, useEffect } from "react";
 
+function DashboardPage({ history }) {
+    const [isLoading, setIsLoading] = useState(true);
+    const [userInfo, setUserInfo] = useState({});
+    const [userRecords, setUserRecords] = useState([]);
+    const [showModal, setShowModal] = useState(false);
 
-class DashboardPage extends Component { 
-    state = {
-      isLoading: true,
-      userInfo: {},
-      userRecords: [],
-      showModal: false
-    }
-  
-    componentDidMount() {
+    let getUser = () => {
       let token = sessionStorage.getItem('token');
-     
-      if (!!token) {
-        axios.get('http://localhost:8080/dashboard', {
-          headers: {
-            Authorization: `Bearer ${token}`
-          }
-        })
-        .then(res => {
-          console.log(res)
-          this.setState({
-            userInfo: res.data.user,
-            userRecords: res.data.records,
-            isLoading: false
+        if (!!token) {
+          axios.get('http://localhost:8080/dashboard', {
+            headers: {
+              Authorization: `Bearer ${token}`
+            }
           })
-        })
-        .catch((err) => {
-          console.log(err)
+          .then(res => {
+            setUserInfo(res.data.user);
+            setUserRecords(res.data.records);
+            setIsLoading(false);
+          })
+          .catch((err) => {
+            console.log(err)
         })
       }
     }
 
-    toRecords = () => {
-      this.props.history.push('/records')
+    useEffect(() => {
+      getUser();
+    }, [])
+
+    let updateRecords = () => {
+      let token = sessionStorage.getItem('token');
+      axios.get('http://localhost:8080/dashboard', {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      })
+      .then(res => {
+        console.log(res)
+        setUserRecords(res.data.records);
+      })
+      .catch((err) => {
+        console.log(err)
+      })
     }
 
-    newRecord = () => {
-      this.setState({ showModal: true })
+    const toRecords = () => {
+      history.push('/records')
     }
 
-    cancelRecord = (e) => {
-      this.setState({ showModal: false})
+    const newRecord = () => {
+      setShowModal(true);
+    }
+
+    const cancelRecord = (e) => {
+      setShowModal(false);
       e.preventDefault();
     }
 
-    submitRecord = (e) => {
+    const submitRecord = (e) => {
+      e.preventDefault();
       axios.post('http://localhost:8080/dashboard/records', {
         location: e.target.location.value,
         width: e.target.width.value,
         length: e.target.length.value,
         texture: e.target.texture.value,
         coloring: e.target.coloring.value,
-        user_id: this.state.userInfo.id
+        user_id: userInfo.id
       })
       .then((res) => {
-        console.log(res)
         e.target.reset();
-        
-    })
-    .catch((error) => {
+        setShowModal(false);
+        updateRecords();  
+      })
+      .catch((error) => {
         console.log(error)
-    });
+      });
     }
   
-    render() {
-      const { userInfo, isLoading, userRecords } = this.state;
+  
       return isLoading ?
         <div className='loading'>
           <h2 className='loading__text'>Loading...</h2>
@@ -79,24 +92,24 @@ class DashboardPage extends Component {
         (
           <main className='dashboard'>
             <NewMole 
-            show={this.state.showModal}
-            hideModal={this.cancelRecord}
-            submitHandler={this.submitRecord}
+            show={showModal}
+            hideModal={cancelRecord}
+            submitHandler={submitRecord}
             />
             <div className='dashboard__header'>
               <h1 className='dashboard__header-text'>Welcome Back {userInfo.first_name}!</h1>
             </div>
             <div className='dashboard__recent'>
               <h2 className='dashboard__recent-header'>Your Most Recent Records</h2>
-              <RecordList records={this.state.userRecords}/>
+              <RecordList records={userRecords}/>
             </div>
             <div className='dashboard__new'>
               <span className='dashboard__new-text'>Got a new mole?</span>
-              <button className='dashboard__new-button' onClick={this.newRecord}>New Record</button>
+              <button className='dashboard__new-button' onClick={newRecord}>New Record</button>
             </div>
             <div className='dashboard__records'>
               <span className='dashboard__records-text'>Something looking different?</span>
-              <button className='dashboard__records-button'onClick={this.toRecords}>Edit Record</button>
+              <button className='dashboard__records-button'onClick={toRecords}>Edit Record</button>
             </div>
             <div className='dashboard__diagram'>
               <img className='dashboard__diagram--img'src={diagram} alt='diagram' />
@@ -110,6 +123,5 @@ class DashboardPage extends Component {
           </main>
         )
     }
-  }
 
 export default DashboardPage;
