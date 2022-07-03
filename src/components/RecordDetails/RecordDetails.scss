@@ -1,3 +1,53 @@
 @use '../../styles/global' as *;
 @use '../../styles/partials/variables' as *;
 @use '../../styles/partials/mixins' as *;
+
+.record-details {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+
+    &__main {
+        position:fixed;
+        background: white;
+        width: 80%;
+        height: 90%;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        padding: 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        border: 1px solid $primary-text;
+        border-radius: 5px;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    &__close {
+        position: absolute;
+        right: 1rem;
+        top: 1rem
+    }
+    
+    &__section {
+        border: 1px solid black;
+        width: 50%;
+    }
+
+    &__text {
+
+    }
+}
+
+.display-block {
+    display: block;
+}
+
+.display-none {
+    display: none;
+}

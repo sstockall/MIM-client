@@ -1,14 +1,14 @@
 import './Record.scss';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import RecordDetails from '../RecordDetails/RecordDetails';
 
 function Record({ id, location, width, length, texture, coloring, special, date, image}) {
 
     const [showRecord, setShowRecord] = useState(false)
 
-    const expandCard = () => {
-        setShowRecord(true)
-    } 
+    const toggleCard = () => {
+        !showRecord ? setShowRecord(true) : setShowRecord(false)
+    }
 
     return ( 
         <div className='record'>
@@ -23,12 +23,13 @@ function Record({ id, location, width, length, texture, coloring, special, date,
                 date={date}
                 image={image}
                 show={showRecord}
+                closeModal={toggleCard}
             />
             <div className='record__image'>
-                <img src={image} alt='image' />
+                <img src={image} alt='' />
             </div>
             <div className='record__title'>
-                <button className={showRecord ? 'record__text--expand' : 'record__text'} onClick={expandCard}>{location}</button>
+                <span className={'record__text'}  onClick={toggleCard}>{location}</span>
             </div>
         </div>
      );

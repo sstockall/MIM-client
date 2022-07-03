@@ -65,6 +65,9 @@ function DashboardPage({ history }) {
 
     const submitRecord = (e) => {
       e.preventDefault();
+      console.log(e.target.file.files[0]);
+      let formData = new FormData();
+      formData.append("file",e.target.file.files[0])
       axios.post('http://localhost:8080/dashboard/records', {
         location: e.target.location.value,
         width: e.target.width.value,

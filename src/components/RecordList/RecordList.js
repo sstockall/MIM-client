@@ -1,6 +1,5 @@
 import './RecordList.scss';
 import Record from '../Record/Record';
-import { useState } from 'react';
 
 function RecordList({ records }) {
     
@@ -19,7 +18,7 @@ function RecordList({ records }) {
                             width={record.width}
                             length={record.length}
                             texture={record.texture}
-                            coloring={record.colorling}
+                            coloring={record.coloring}
                             special={record.special_info}
                         />
                     </li>
