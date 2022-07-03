@@ -1,5 +1,6 @@
 import './RecordList.scss';
 import Record from '../Record/Record';
+import { useState } from 'react';
 
 function RecordList({ records }) {
     
@@ -8,6 +9,7 @@ function RecordList({ records }) {
             {records.map((record) => {
                 return <li
                     key={record.id}
+                    className='records-list__item'
                     >
                         <Record 
                             id={record.id}

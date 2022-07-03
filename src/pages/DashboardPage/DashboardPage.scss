@@ -24,7 +24,10 @@
     }
 
     &__recent {
-        @include inner-area
+        @include inner-area;
+        display: flex;
+        flex-direction: column;
+        align-items: center
     }
 
     &__recent-header {
