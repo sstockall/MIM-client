@@ -4,13 +4,14 @@ import Record from '../Record/Record';
 function RecordList({ records }) {
     
     return ( 
-        <ul className='records'>
+        <ul className='records-list'>
             {records.map((record) => {
                 return <li
                     key={record.id}
                     >
                         <Record 
                             id={record.id}
+                            image={record.image}
                             date={record.updated_at}
                             location={record.location}
                             width={record.width}

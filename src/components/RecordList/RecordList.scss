@@ -2,7 +2,10 @@
 @use '../../styles/partials/variables' as *;
 @use '../../styles/partials/mixins' as *;
 
-.records {
+.records-list {
     list-style-type: none;
     padding: 0.5rem;
+    @include inner-area;
+    display: flex;
+    flex-wrap: wrap;
 }

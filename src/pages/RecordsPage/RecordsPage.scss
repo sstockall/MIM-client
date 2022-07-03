@@ -1,0 +1,19 @@
+@use '../../styles/global' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.records {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__header {
+        @include inner-area;
+    }
+    &__header-text {
+
+    }
+    &__header-subtext {
+
+    }
+}
