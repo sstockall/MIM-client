@@ -4,10 +4,10 @@ function Record({ id, location, width, length, texture, coloring, special, date}
     const formatDate = new Date(date).toLocaleDateString();
     return ( 
         <div className='record'>
-            <div className='record__date'>
+            {/* <div className='record__date'>
                 <h4 className='record__header'>Discovered: </h4>
                 <span className='record__text'>{formatDate}</span>
-            </div>
+            </div> */}
             <div className='record__location'>
                 <h4 className='record__header'>Location: </h4>
                 <span className='record__text'>{location}</span>
