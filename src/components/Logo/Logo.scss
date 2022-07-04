@@ -1,0 +1,16 @@
+@use '../../styles/global' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.logo {
+    
+    &__letter {
+        font-size: 3rem;
+        font-weight: 800;
+        text-shadow: -0.08em 0.03em 0.12em rgba(0, 0, 0, 0.9);
+    }
+}
+
+div span:not(:first-child) {
+    margin-left: -0.5rem;
+}

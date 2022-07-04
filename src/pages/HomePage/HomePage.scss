@@ -3,101 +3,126 @@
 @use '../../styles/partials/mixins' as *;
 
 .home {
-    background: url('../../assets/images/molepic1.jpeg') rgba(0, 134, 179, 0.2);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-blend-mode: multiply;
-    background-attachment: fixed;
+    background-color: $light-grey;
     display: flex;
+    flex-direction: column;
     justify-content: center;
 
-    &__inner {
-        margin: 1rem 0;
-        width: 90%;
-    }
     &__hero {
-        background-color: $light-grey;
-        border-radius: 5px;
-        padding: 0.5rem;
-        padding-bottom: 5rem;
+        background: url('../../assets/images/hero.jpg') rgba(0, 134, 179, 0.2);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-blend-mode: multiply;
+        padding-top: 9rem;
         display: flex;
-        flex-direction: column;
-        align-items: center;
     }
 
     &__hero-header {
-        padding-bottom: 1rem;
-        font-weight: 800;
-        font-size: 1.7rem;
+        font-weight: 600;
+        font-size: 1.8rem;
         text-align: left;
+        padding: 0 0 0.5rem 0.5rem;
     }
 
-    &__hero-textbox {
-        width: 50%;
+    &__text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 0.5rem;
     }
 
-    &__hero-text {
+    &__text-box {
         font-size: $body-fontsize;
+        font-weight: 600;
         line-height: 1rem;
         padding: 0.5rem 0;
 
         &--mim {
-
+            color: $secondary-blue;
+            font-weight: 800;
+            font-size: 1rem;
+            text-shadow: -0.08em 0.03em 0.12em rgba(0, 0, 0, 0.1);
         }
     }
 
     &__info {
         display: flex;
-        justify-content: center;
-    }
-
-    &__info-inner {
-        width: 90%;
-        border-radius: 5px;
-        box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.7);
-        margin-top: -3.5rem;
-        background-color: $cloud;
-        padding: 0.5rem;
+        flex-direction: column;
+        align-items: center;
     }
 
     &__info-header {
-        text-align: right;
-        font-size: 1.2rem;
+        width: 95%;
+        border-radius: 2px;
+        box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.4);
+        background-color: #dcd4dc;
         padding: 0.5rem;
+        margin: 1rem 0;
+    }
+
+    &__info-heading {
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 0.5rem;
+        font-weight: 600;
 
         &--mim {
-
+            font-weight: 800;
+            text-shadow: -0.08em 0.03em 0.12em rgba(0, 0, 0, 0.25);
         }
     }
 
     &__info-textbox {
-        text-align: left;
-        padding: 0 0.5rem;
+        display: flex;
+        flex-direction: column;
+
+        padding: 1rem;
     }
 
-    &__info-text {
-        font-size: $body-fontsize;
-    }
 
     &__info-list {
         padding: 0.5rem 1rem;
-        list-style-type: circle;
+        list-style-type: none;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
     }
 
     &__list-item {
         font-size: $body-fontsize;
+        font-style: italic;
+        font-weight: 600;
+        padding: 0 0.5rem;
+        border-left: 2px solid $secondary-blue;
+
+        &:nth-child(3) {
+            border-right: 2px solid $secondary-blue;
+        }
+
+        &:nth-child(5) {
+            border-right: 2px solid $secondary-blue;
+        }
+    }
+
+    &__info-text {
+        font-size: $body-fontsize;
+        text-align: center;
+        font-style: italic;
     }
            
     &__info-cta {
         text-align: left;
         font-size: $body-fontsize;
         padding: 0.5rem;
+        text-align: center;
         
     }
 
     &__info-link {
-        color: white;
-        padding-right: 0.5rem;
+        color: $secondary-blue;
+        font-weight: 800;
+        font-style: italic;
+        padding-right: 0.7rem;
     }
 
     &__lesions {

@@ -4,7 +4,8 @@
 
 .footer {
     background-color: $primary-text;
-
+    display: flex;
+    justify-content: space-between;
 
     &__logo {
 

@@ -11,7 +11,7 @@ function NewMole( { show, submitHandler, hideModal }) {
                             <h2 className='new-mole__header-text'>New Mole Record</h2>
                             <span className='new-mole__text'>Fill out few quick fields and we'll get the mole logged into your skin profile.</span>
                         </div>
-                        <form className='new-mole__form' onSubmit={submitHandler}>
+                        <form className='new-mole__form' encType='multipart/form-data' onSubmit={submitHandler}>
                             <div className='new-mole__inputs'>
                                 <InputField className='new-mole__form-field'type="file" name="image" label="Image" />
                                 <InputField className='new-mole__form-field'type="location" name="location" label="Location" placeholder="Right upper arm, left cheek..." />

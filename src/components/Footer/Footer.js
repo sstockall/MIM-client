@@ -1,12 +1,11 @@
 import { NavLink } from 'react-router-dom';
-import './Footer.scss'
+import './Footer.scss';
+import Logo from '../Logo/Logo';
 
 function Footer() {
     return ( 
         <footer className="footer">
-             < div className='footer__logo'>
-                
-            </div>
+             <Logo />
             <div className='footer__pages'>
                 <NavLink to='/' className='footer__link'>Home</NavLink>
                 <NavLink to='/' className='footer__link'>Glossary</NavLink>
