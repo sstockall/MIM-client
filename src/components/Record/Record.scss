@@ -23,11 +23,13 @@
         flex-grow: 1;
         display: flex;
         justify-content: center;
-        align-items: flex-end;
+        align-items: center;
+        background-color: $light-grey;
+        border-radius: 3px;
     }
 
     &__text {
-        font-size: 0.7rem;
+        font-size: 0.55rem;
         background-color: $light-grey;
         border: none;
         padding: 0;

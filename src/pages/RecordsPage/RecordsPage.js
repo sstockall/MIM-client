@@ -92,7 +92,10 @@ function RecordsPage({ history }) {
                 <h2 className='records__header-text'>Welcome To Your Records Page</h2>
                 <span className='records__header-subtext'>This is a place to keep all of your records organized and in one place.</span>
             </div>
-            <RecordList records={userRecords}/>
+            <RecordList 
+            records={userRecords}
+            isRecordPage={true}
+            />
         </section>
     );
 } 

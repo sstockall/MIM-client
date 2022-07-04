@@ -5,11 +5,22 @@
 .records-list {
     list-style-type: none;
     padding: 0.5rem;
-    @include inner-area;
     display: flex;
     flex-wrap: wrap;
 
     &__item {
         width: 50%;
+    }
+}
+
+.records-list__recent {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style-type: none;
+    width: 100%;
+
+    &__recent-item {
+        width: 30%;
     }
 }

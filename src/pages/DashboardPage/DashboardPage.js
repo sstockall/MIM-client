@@ -103,11 +103,14 @@ function DashboardPage({ history }) {
           submitHandler={submitRecord}
           />
           <div className='dashboard__header'>
-            <h1 className='dashboard__header-text'>Welcome Back {userInfo.first_name}!</h1>
+            <h1 className='dashboard__header-text'>hey {userInfo.first_name}, welcome back!</h1>
           </div>
           <div className='dashboard__recent'>
-            <h2 className='dashboard__recent-header'>Your Most Recent Records</h2>
-            <RecordList records={userRecords}/>
+            <h2 className='dashboard__recent-header'>Recent Records</h2>
+            <RecordList 
+            records={userRecords}
+            isRecordPage={false}
+            />
           </div>
           <div className='dashboard__new'>
             <span className='dashboard__new-text'>Got a new mole?</span>
