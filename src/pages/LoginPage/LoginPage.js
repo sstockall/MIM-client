@@ -1,16 +1,16 @@
 import './LoginPage.scss';
-import { Component } from 'react';
 import { NavLink } from 'react-router-dom'
 import axios from 'axios';
 import InputField from '../../components/InputField/InputField';
+import { useEffect } from 'react';
 
-class LoginPage extends Component {
-    state = {
-        errorMessage: "",
-        loggedIn: false
-    }
+function LoginPage() {
 
-    handleLogin = (e) => {
+    useEffect(() => {
+        window.scrollTo(0,0)
+    }, [])
+   
+    const handleLogin = (e) => {
         e.preventDefault()
         axios
             .post('http://localhost:8080/login', {
@@ -27,33 +27,31 @@ class LoginPage extends Component {
             });
     };
 
-    render() {
-        return ( 
-            <section className="login">
-                <div className='login__inner'>
-                    <div className='login__hero'>
-                        <h1 className='login__hero-header'>Hello Again!</h1>
-                    </div>
-                    <form className='login__form' onSubmit={this.handleLogin}>
-                        <div className='login__form-userinfo'>
-                            <div className='login__form-header'>
-                                <h2 className='login__form-header--text'>Sign in to your account</h2>
-                            </div>
-                            <div className='login__form-field'>
-                                <InputField className='signup__form-field'type="text" name="email" label="Email" />
-                                <InputField className='signup__form-field'type="password" name="password" label="Password" />
-                            </div>
-                        </div>
-                        <div className='login__form-submit'>
-                            <button className='login__form-button'>Log In</button>
-                            <span className='login__form-login'>Need an account?</span>
-                            <NavLink to='/signup' className='login__form-link'>Create One!</NavLink>
-                        </div>
-                    </form>
+    return ( 
+        <section className="login">
+            <div className='login__inner'>
+                <div className='login__hero'>
+                    <h1 className='login__hero-header'>Hello Again!</h1>
                 </div>
-            </section>
-        );
-    }
+                <form className='login__form' onSubmit={handleLogin}>
+                    <div className='login__form-userinfo'>
+                        <div className='login__form-header'>
+                            <h2 className='login__form-header--text'>Sign in to your account</h2>
+                        </div>
+                        <div className='login__form-field'>
+                            <InputField className='signup__form-field'type="text" name="email" label="Email" />
+                            <InputField className='signup__form-field'type="password" name="password" label="Password" />
+                        </div>
+                    </div>
+                    <div className='login__form-submit'>
+                        <button className='login__form-button'>Log In</button>
+                        <span className='login__form-login'>Need an account?</span>
+                        <NavLink to='/signup' className='login__form-link'>Create One!</NavLink>
+                    </div>
+                </form>
+            </div>
+        </section>
+    );
 }
 
 export default LoginPage;

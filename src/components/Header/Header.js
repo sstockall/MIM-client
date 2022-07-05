@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import Logo from '../Logo/Logo';
+import avatar from '../../assets/images/avatar.jpeg';
 import './Header.scss'
 
 function Header() {
@@ -13,13 +14,12 @@ function Header() {
 
     return ( 
         <header className="header">
-            <Logo />
             <nav className='header__nav'>
                 <div className="header__dropdown">
                     <div 
                         className="dropbtn" 
-                        onMouseOver={toggleMenu}>
-                        Menu
+                        onClick={toggleMenu}>
+                        <img className='dropbtn__img' src={avatar} alt='avatar' />
                     </div>
                     <div 
                     className={showMenu ? "header__dropdown-content display-block" : "header__dropdown-content display-none"}
@@ -30,11 +30,8 @@ function Header() {
                         <NavLink to='/glossary'>Glossary</NavLink>
                     </div>
                 </div>
-                
-                {/* <NavLink to='/login' className='header__nav-link'>Login</NavLink>
-                <NavLink to='/signup' className='header__nav-link'>SignUp</NavLink>
-                <NavLink to='/dashboard' className='header__nav-link'>Dashboard</NavLink> */}
             </nav>
+            <Logo />
         </header>
      );
 }

@@ -1,16 +1,16 @@
 import './SignUpPage.scss';
 import { NavLink } from 'react-router-dom';
-import { Component } from 'react';
+import { useEffect } from 'react';
 import axios from 'axios';
 import InputField from '../../components/InputField/InputField';
 
-class SignUpPage extends Component {
-    state = {
-        errorMessage: '',
-        signedUp: false
-    }
+function SignUpPage() {
+    
+    useEffect(() => {
+        window.scrollTo(0,0)
+    }, [])
 
-    handleSignUp = (e) => {
+    const handleSignUp = (e) => {
         e.preventDefault();
         axios
             .post("http://localhost:8080/signup", {
@@ -21,17 +21,12 @@ class SignUpPage extends Component {
                 username: e.target.username.value
             })
             .then(() => {
-                this.setState({ signedUp: true, errorMessage: "" });
                 e.target.reset();
                 this.props.history.push('/login')
             })
-            .catch((err) => {
-                this.setState({ signedUp: false });
-                console.error(err)
-            });
+            .catch((err) => console.error(err));
     };
 
-    render() {
         return ( 
             <section className="signup">
                 <div className='signup__inner'>
@@ -39,7 +34,7 @@ class SignUpPage extends Component {
                         <h2 className='signup__hero-header1'>Start Tracking</h2> 
                         <h2 className='signup__hero-header2'>Your Moles Today!</h2>
                     </div>
-                    <form className="signup__form" onSubmit={this.handleSignUp}>
+                    <form className="signup__form" onSubmit={handleSignUp}>
                         <div className='singup__form-header'>
                             <h2 className='signup__form-header--text'>Create an account</h2>
                         </div>
@@ -60,6 +55,6 @@ class SignUpPage extends Component {
             </section>
         );
     }
-}
+
 
 export default SignUpPage;

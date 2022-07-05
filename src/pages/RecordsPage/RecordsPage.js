@@ -11,6 +11,10 @@ function RecordsPage({ history }) {
     const [userRecords, setUserRecords] = useState([]);
     const [showModal, setShowModal] = useState(false);
 
+    useEffect(() => {
+      window.scrollTo(0,0)
+    }, [])
+
     let getUser = () => {
       let token = sessionStorage.getItem('token');
         if (!!token) {

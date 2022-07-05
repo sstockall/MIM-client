@@ -1,4 +1,4 @@
-import './Record.scss';
+import './Record.scss'
 import { useState } from 'react';
 import RecordDetails from '../RecordDetails/RecordDetails';
 

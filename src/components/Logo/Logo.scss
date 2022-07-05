@@ -5,12 +5,12 @@
 .logo {
     
     &__letter {
-        font-size: 3rem;
-        font-weight: 800;
+        font-family: 'Bebas Neue';
+        font-size: 4rem;
         text-shadow: -0.08em 0.03em 0.12em rgba(0, 0, 0, 0.9);
     }
 }
 
 div span:not(:first-child) {
-    margin-left: -0.5rem;
+    margin-left: -0.1rem;
 }

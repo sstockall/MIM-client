@@ -1,7 +1,13 @@
 import { NavLink } from 'react-router-dom';
-import './HomePage.scss'
+import { useEffect } from 'react';
+import './HomePage.scss';
 
 function HomePage() {
+
+    useEffect(() => {
+        window.scrollTo(0,0)
+    }, [])
+
     return ( 
         <main className="home">
             <section className='home__hero'>
