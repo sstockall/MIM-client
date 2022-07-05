@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import Logo from '../Logo/Logo';
-import avatar from '../../assets/images/avatar.jpeg';
+import menuIcon from '../../assets/icons/hamburger.png';
 import './Header.scss'
 
 function Header() {
@@ -19,7 +19,7 @@ function Header() {
                     <div 
                         className="dropbtn" 
                         onClick={toggleMenu}>
-                        <img className='dropbtn__img' src={avatar} alt='avatar' />
+                        <img className='dropbtn__img' src={menuIcon} alt='avatar' />
                     </div>
                     <div 
                     className={showMenu ? "header__dropdown-content display-block" : "header__dropdown-content display-none"}

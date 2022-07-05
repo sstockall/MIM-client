@@ -14,7 +14,7 @@ function RecordList({ records, isRecordPage, updateRecords }) {
                         >
                             <Record 
                                 id={record.record_id}
-                                image={record.image}
+                                image={record.image_url}
                                 date={record.updated_at}
                                 location={record.location}
                                 width={record.width}
@@ -39,7 +39,7 @@ function RecordList({ records, isRecordPage, updateRecords }) {
                             >
                                 <Record 
                                     id={record.record_id}
-                                    image={record.image}
+                                    image={record.image_url}
                                     date={record.updated_at}
                                     location={record.location}
                                     width={record.width}

@@ -17,6 +17,7 @@ function RecordDetails({ id, location, width, length, texture, coloring, special
 
     const toggleDelete = () => {
         !deleteModal ? setDeleteModal(true) : setDeleteModal(false)
+        console.log(deleteModal)
     }
 
     const toggleEdit = () => {

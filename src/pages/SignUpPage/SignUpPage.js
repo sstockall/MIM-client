@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import axios from 'axios';
 import InputField from '../../components/InputField/InputField';
 
-function SignUpPage() {
+function SignUpPage({ history }) {
     
     useEffect(() => {
         window.scrollTo(0,0)
@@ -22,7 +22,7 @@ function SignUpPage() {
             })
             .then(() => {
                 e.target.reset();
-                this.props.history.push('/login')
+                history.push('/login')
             })
             .catch((err) => console.error(err));
     };

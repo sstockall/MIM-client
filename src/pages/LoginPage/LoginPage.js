@@ -4,7 +4,7 @@ import axios from 'axios';
 import InputField from '../../components/InputField/InputField';
 import { useEffect } from 'react';
 
-function LoginPage() {
+function LoginPage({ history }) {
 
     useEffect(() => {
         window.scrollTo(0,0)
@@ -19,12 +19,9 @@ function LoginPage() {
             })
             .then((response) => {
                 sessionStorage.setItem("token", response.data.token);
-                this.setState({ loggedIn: true });
-                this.props.history.push('/dashboard')
+                history.push('/dashboard');
             })
-            .catch((error) => {
-                this.setState({ errorMessage: error.response.data });
-            });
+            .catch((err) => console.error(err));
     };
 
     return ( 

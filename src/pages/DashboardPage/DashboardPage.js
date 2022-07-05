@@ -61,31 +61,31 @@ function DashboardPage() {
 
     const submitRecord = (e) => {
       e.preventDefault();
-      // let formData = new FormData();
-      // formData.append("image", e.target.image.files[0]);
-      // formData.append('upload_preset', 'phk0eezk')
-
-      // axios.post('https://api.cloudinary.com/v1_1/dob0dukux/upload', formData)
-      //   .then((res) => {
-      //     console.log(res)
-      //   })
-      //   .catch((err) => console.log(err))
+      let formData = new FormData();
+      formData.append("image", e.target.image.files[0]);
+      formData.append('upload_preset', 'phk0eezk')
       
-      axios.post('http://localhost:8080/dashboard/records', {
-        location: e.target.location.value,
-        width: e.target.width.value,
-        length: e.target.length.value,
-        texture: e.target.texture.value,
-        coloring: e.target.coloring.value,
-        special_info: e.target.special_info.value,
-        user_id: userInfo.id,
-      })
-      .then((res) => {
-        e.target.reset();
-        setShowModal(false);
-        updateRecords();  
-      })
-      .catch((err) => console.error(err));
+      axios.post('http://localhost:8080/images', formData)
+        .then((res) => {
+          console.log(res)
+          axios.post('http://localhost:8080/dashboard/records', {
+            image_url: res.data.path,
+            location: e.target.location.value,
+            width: e.target.width.value,
+            length: e.target.length.value,
+            texture: e.target.texture.value,
+            coloring: e.target.coloring.value,
+            special_info: e.target.special_info.value,
+            user_id: userInfo.id,
+          })
+          .then((res) => {
+            e.target.reset();
+            setShowModal(false);
+            updateRecords();  
+          })
+          .catch((err) => console.error(err));
+        })
+        .catch((err) => console.log(err))
     }
 
     return isLoading ?
