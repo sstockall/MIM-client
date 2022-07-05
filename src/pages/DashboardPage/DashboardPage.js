@@ -4,8 +4,9 @@ import diagram from '../../assets/images/anatomy-diagram.png'
 import NewMole from '../../components/NewMole/NewMole';
 import RecordList from '../../components/RecordList/RecordList';
 import { useState, useEffect } from "react";
+import { NavLink } from 'react-router-dom';
 
-function DashboardPage({ history }) {
+function DashboardPage() {
     const [isLoading, setIsLoading] = useState(true);
     const [userInfo, setUserInfo] = useState({});
     const [userRecords, setUserRecords] = useState([]);
@@ -45,12 +46,8 @@ function DashboardPage({ history }) {
         setUserRecords(res.data.records);
       })
       .catch((err) => {
-        console.log(err)
+        console.error(err)
       })
-    }
-
-    const toRecords = () => {
-      history.push('/records')
     }
 
     const newRecord = () => {
@@ -58,8 +55,8 @@ function DashboardPage({ history }) {
     }
 
     const cancelRecord = (e) => {
-      setShowModal(false);
       e.preventDefault();
+      setShowModal(false);
     }
 
     const submitRecord = (e) => {
@@ -73,13 +70,14 @@ function DashboardPage({ history }) {
       //     console.log(res)
       //   })
       //   .catch((err) => console.log(err))
-
+      
       axios.post('http://localhost:8080/dashboard/records', {
         location: e.target.location.value,
         width: e.target.width.value,
         length: e.target.length.value,
         texture: e.target.texture.value,
         coloring: e.target.coloring.value,
+        special_info: e.target.special_info.value,
         user_id: userInfo.id,
       })
       .then((res) => {
@@ -87,7 +85,7 @@ function DashboardPage({ history }) {
         setShowModal(false);
         updateRecords();  
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.error(err));
     }
 
     return isLoading ?
@@ -102,33 +100,42 @@ function DashboardPage({ history }) {
           hideModal={cancelRecord}
           submitHandler={submitRecord}
           />
-          <div className='dashboard__header'>
-            <h1 className='dashboard__header-text'>hey {userInfo.first_name}, welcome back!</h1>
-          </div>
-          <div className='dashboard__recent'>
-            <h2 className='dashboard__recent-header'>Recent Records</h2>
-            <RecordList 
-            records={userRecords}
-            isRecordPage={false}
-            />
-          </div>
-          <div className='dashboard__new'>
-            <span className='dashboard__new-text'>Got a new mole?</span>
-            <button className='dashboard__new-button' onClick={newRecord}>New Record</button>
-          </div>
-          <div className='dashboard__records'>
-            <span className='dashboard__records-text'>Something looking different?</span>
-            <button className='dashboard__records-button'onClick={toRecords}>Edit Record</button>
-          </div>
-          <div className='dashboard__diagram'>
-            <img className='dashboard__diagram--img'src={diagram} alt='diagram' />
-          </div>
-          <div className='dashboard__terms'>
-            <h2 className='dashboard__terms-header'>Get Specific.</h2>
-            <p className='dashboard__terms-text'>The more detail you put into a record, the easier it is to tell if anything's changed in the future.</p>
-            <p className='dashboard__terms-text'>This can be a bit tricky, as medical speak can be confusing.</p>
-            <p className='dashboard__terms-text'>To help with this, we've created a list of anatomical labelling terms to help you get as specific as you want to be.</p>
-          </div>
+          <nav className='dashboard__nav'>
+            <div className='dashboard__nav-item'>
+              <NavLink to='/'className='dashboard__nav-link'>Home</NavLink>
+            </div>
+            <div className='dashboard__nav-item'>
+              <NavLink to='/records'className='dashboard__nav-link'>Records</NavLink>
+            </div>
+            <div className='dashboard__nav-item'>
+              <span className='dashboard__nav-link' onClick={newRecord}>New Record</span>
+            </div>
+            <div className='dashboard__nav-item'>
+              <span className='dashboard__nav-link'>Terminology</span>
+            </div>
+          </nav>
+          <section className='dashboard__hero'>
+              <h1 className='dashboard__hero-header'>hey {userInfo.first_name}</h1>
+          </section>
+          <section className='dashboard__content'>
+            <section className='dashboard__recent'>
+              <h2 className='dashboard__recent-header'>Recent Records</h2>
+              <RecordList 
+              records={userRecords}
+              isRecordPage={false}
+              updateRecords={updateRecords}
+              />
+            </section>
+            <div className='dashboard__diagram'>
+              <img className='dashboard__diagram--img'src={diagram} alt='diagram' />
+            </div>
+            <div className='dashboard__terms'>
+              <h2 className='dashboard__terms-header'>Be Specific</h2>
+              <p className='dashboard__terms-text'>The more detail you put into a record, the easier it is to tell if anything's changed in the future.</p>
+              <p className='dashboard__terms-text'>This can be a bit tricky, as medical speak can be confusing.</p>
+              <p className='dashboard__terms-text'>To help with this, we've created a list of anatomical labelling terms to help you get as specific as you want to be.</p>
+            </div>
+          </section>
         </main>
       )
   }

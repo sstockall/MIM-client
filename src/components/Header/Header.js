@@ -15,7 +15,7 @@ function Header() {
         <header className="header">
             <Logo />
             <nav className='header__nav'>
-                <div class="header__dropdown">
+                <div className="header__dropdown">
                     <div 
                         className="dropbtn" 
                         onMouseOver={toggleMenu}>

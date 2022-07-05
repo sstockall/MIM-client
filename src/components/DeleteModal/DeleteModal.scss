@@ -1,0 +1,60 @@
+@use '../../styles/global' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.delete-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:50%;
+    height: 100%;
+    
+
+    &__main {
+        position:fixed;
+        background: white;
+        width: 30%;
+        height: 30%;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        padding: 1rem 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid $slate;
+        border-radius: 5px;
+
+        @include tablet {
+            width: 70%;
+        }
+
+        @include desktop {
+            width: 50%;
+            height: 75%;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__text {
+    
+    }
+
+    &__header {
+        text-align: center;
+        font-size: 1rem;
+    }
+
+    &__buttons {
+
+    }
+
+    &__button {
+        width: 5rem;
+    }
+}

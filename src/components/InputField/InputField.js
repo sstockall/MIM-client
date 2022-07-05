@@ -1,12 +1,12 @@
 import "./InputField.scss";
 
-function InputField({ label, name, type, placeholder }) {
+function InputField({ label, name, type, placeholder, defaultValue }) {
     return (
         <div className="input-field">
             <label htmlFor={name} className="input-field__label">
                 {label}
             </label>
-            <input type={type} id={name} name={name} placeholder={placeholder} className="input-field__input" />
+            <input type={type} id={name} name={name} placeholder={placeholder} defaultValue={defaultValue} className="input-field__input" />
         </div>
     );
 }

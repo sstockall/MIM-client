@@ -6,10 +6,23 @@
     list-style-type: none;
     padding: 0.5rem;
     display: flex;
-    flex-wrap: wrap;
+    background-color: $accent;
+
+    @include tablet {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 
     &__item {
         width: 50%;
+
+        @include tablet {
+            width: 30%;
+        }
+
+        @include desktop {
+            width: 20%;
+        }
     }
 }
 
@@ -19,6 +32,11 @@
     justify-content: center;
     list-style-type: none;
     width: 100%;
+
+    @include tablet {
+        flex-direction: column;
+        align-items: center;
+    }
 
     &__recent-item {
         width: 30%;

@@ -1,20 +1,19 @@
 import './RecordList.scss';
 import Record from '../Record/Record';
 
-function RecordList({ records, isRecordPage}) {
+function RecordList({ records, isRecordPage, updateRecords }) {
 
     const dashboardArr = records.slice(0, 3);
-
     return isRecordPage ?  
         ( 
             <ul className='records-list'>
                 {records.map((record) => {
                     return <li
-                        key={record.id}
+                        key={record.record_id}
                         className='records-list__item'
                         >
                             <Record 
-                                id={record.id}
+                                id={record.record_id}
                                 image={record.image}
                                 date={record.updated_at}
                                 location={record.location}
@@ -23,6 +22,7 @@ function RecordList({ records, isRecordPage}) {
                                 texture={record.texture}
                                 coloring={record.coloring}
                                 special={record.special_info}
+                                updateRecords={updateRecords}
                             />
                         </li>
                     })
@@ -34,11 +34,11 @@ function RecordList({ records, isRecordPage}) {
             <ul className='records-list__recent'>
                 {dashboardArr.map((record) => {
                     return <li
-                            key={record.id}
+                            key={record.record_id}
                             className='records-list__recent-item'
                             >
                                 <Record 
-                                    id={record.id}
+                                    id={record.record_id}
                                     image={record.image}
                                     date={record.updated_at}
                                     location={record.location}
@@ -47,6 +47,7 @@ function RecordList({ records, isRecordPage}) {
                                     texture={record.texture}
                                     coloring={record.coloring}
                                     special={record.special_info}
+                                    updateRecords={updateRecords}
                                 />
                             </li>
                         })

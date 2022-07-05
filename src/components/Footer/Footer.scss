@@ -6,6 +6,11 @@
     background-color: $primary-text;
     display: flex;
     justify-content: space-between;
+    padding: 1rem;
+
+    @include desktop {
+        padding: 1rem 7rem
+    }
 
     &__logo {
 

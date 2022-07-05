@@ -9,12 +9,20 @@
     justify-content: center;
 
     &__hero {
-        background: url('../../assets/images/hero.jpg') rgba(0, 134, 179, 0.2);
+        background: url('../../assets/images/mole-shoulder.jpg') rgba(0, 134, 179, 0.2);
         background-repeat: no-repeat;
         background-size: cover;
         background-blend-mode: multiply;
         padding-top: 9rem;
         display: flex;
+
+        @include tablet {
+            padding-top: 11rem;
+        }
+
+        @include desktop {
+            padding-top: 18rem;
+        }
     }
 
     &__hero-header {
@@ -45,19 +53,46 @@
         }
     }
 
+    &__lower {
+
+        @include desktop {
+            display: flex;
+        }
+    }
+
     &__info {
         display: flex;
         flex-direction: column;
         align-items: center;
+
+        @include tablet {
+            flex-direction: row;
+        }
+
+        @include desktop {
+            width: 50%;
+            flex-direction: column;
+           
+        }
     }
 
     &__info-header {
         width: 95%;
         border-radius: 2px;
         box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.4);
-        background-color: #dcd4dc;
+        background-color: $accent;
         padding: 0.5rem;
         margin: 1rem 0;
+
+        @include tablet {
+            width: 40%;
+            padding: 2rem 0;
+            margin: 1rem;
+        }
+
+        @include desktop {
+            width: 80%;
+        }
     }
 
     &__info-heading {
@@ -77,6 +112,10 @@
         flex-direction: column;
 
         padding: 1rem;
+
+        @include tablet {
+            padding-bottom: 0;
+        }
     }
 
 
@@ -84,24 +123,32 @@
         padding: 0.5rem 1rem;
         list-style-type: none;
         display: flex;
+        flex-direction: column;
+        align-items: center;
         justify-content: center;
         flex-wrap: wrap;
+
+        @include tablet {
+            align-items: flex-start;
+        }
     }
 
     &__list-item {
         font-size: $body-fontsize;
-        font-style: italic;
         font-weight: 600;
         padding: 0 0.5rem;
-        border-left: 2px solid $secondary-blue;
 
-        &:nth-child(3) {
-            border-right: 2px solid $secondary-blue;
-        }
+        &--description {
+            display: none;
 
-        &:nth-child(5) {
-            border-right: 2px solid $secondary-blue;
+            @include tablet {
+                display: inline;
+                font-size: 0.7rem;
+                font-style: normal;
+                padding-left: 0.5rem;
+            }
         }
+        
     }
 
     &__info-text {
@@ -128,6 +175,10 @@
     &__lesions {
         display: flex;
         justify-content: center;
+
+        @include desktop {
+            justify-content: flex-start;
+        }
     }
 
     &__lesions-inner {
@@ -137,12 +188,27 @@
         background-color: $background-blue;
         padding: 0.5rem;
         margin: 1rem 0;
+
+        @include tablet {
+            width: 45%;
+        }
+
+        @include desktop {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
     }
 
     &__lesions-header {
         font-size: 1.2rem;
         padding: 0.5rem;
         text-align: left;
+
+        @include desktop {
+            font-size: 1.5rem;
+            text-align: center;
+        }
     }
 
     &__lesions-text {
@@ -154,11 +220,21 @@
     &__lesions-span {
         font-size: $body-fontsize;
         text-align: left;
+
+        @include desktop {
+            font-size: 1rem;
+            text-align: center;
+        }
     }
 
     &__lesions-link {
         color: white;
         font-size: $body-fontsize;
+
+        @include desktop {
+            font-size: 1rem;
+            text-align: center;
+        }
     }
                 
 }

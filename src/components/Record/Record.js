@@ -2,12 +2,12 @@ import './Record.scss';
 import { useState } from 'react';
 import RecordDetails from '../RecordDetails/RecordDetails';
 
-function Record({ id, location, width, length, texture, coloring, special, date, image}) {
+function Record({ id, location, width, length, texture, coloring, special, date, image, updateRecords}) {
 
     const [showRecord, setShowRecord] = useState(false)
 
     const toggleCard = () => {
-        !showRecord ? setShowRecord(true) : setShowRecord(false)
+        !showRecord ? setShowRecord(true) : setShowRecord(false);
     }
 
     return ( 
@@ -24,6 +24,7 @@ function Record({ id, location, width, length, texture, coloring, special, date,
                 image={image}
                 show={showRecord}
                 closeModal={toggleCard}
+                updateRecords={updateRecords}
             />
             <div className='record__image'>
                 <img src={image} alt='' />

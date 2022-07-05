@@ -9,10 +9,11 @@
     width:100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.6);
+    z-index: 2;
 
     &__main {
         position:fixed;
-        background: white;
+        background: $light-grey;
         width: 80%;
         height: 90%;
         top:50%;
@@ -26,10 +27,34 @@
         border-radius: 5px;
         overflow-x: hidden;
         overflow-y: auto;
+
+        @include tablet {
+            width: 55%;
+        }
+
+        @include desktop {
+            height: 50%
+        }
     }
 
     &__content {
         width: 90%;
+    }
+
+    &__header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__header-text {
+        padding-bottom: 1rem;
+    }
+
+    &__text {
+        text-align: center;
+        font-size: $body-fontsize;
+        padding: 0 1rem;
     }
 
     &__form {
@@ -41,10 +66,18 @@
     &__inputs {
         display: flex;
         flex-direction: column;
-    }
 
-    &__form-field {
-        
+        @include tablet {
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            padding-top: 0.5rem;
+        }
+
+        @include desktop {
+
+        }
     }
 
     &__form-label {
@@ -60,18 +93,19 @@
         padding: 0.5rem;
         font-size: inherit;
         width: 100%;
+        border: 1px solid $slate;
     }
 
     &__buttons {
-
+        display: flex;
     }
 
     &__submit-button {
-
+        width: auto;
     }
 
     &__cancel-button {
-
+        width: auto;
     }
 }
 

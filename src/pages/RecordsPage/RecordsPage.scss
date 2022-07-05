@@ -6,14 +6,59 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: $light-grey;
 
-    &__header {
-        @include inner-area;
+    &__nav {
+        display: flex;
+        justify-content: space-between;
+        background-color: $slate;
+        width: 100%;
+        margin-top: -0.5rem;
+        padding: 0.5rem;
     }
+
+    &__nav-link {
+        color: $light-grey;
+        font-size: $body-fontsize;
+        padding-bottom: 0.5rem;
+        padding: 0 0.5rem;
+    }
+
     &__header-text {
+        font-size: 1.2rem;
+        text-align: center;
+        padding: 0.5rem
+    }
+
+    &__click {
+        font-size: $body-fontsize;
+        margin: 0 1rem;
+    }
+
+    &__list {
+        @include inner-area;
+        background-color: $accent;
+        max-height: 15rem;
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        @include tablet {
+            max-height: 35rem;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
 
     }
-    &__header-subtext {
 
+    &__list-header {
+        font-size: 0.6rem;
+        font-style: italic;
+        color: $slate;
+        padding-top: 0.5rem;
+        padding-left: 0.5rem;
+
+        @include tablet {
+            display: none;
+        }
     }
 }

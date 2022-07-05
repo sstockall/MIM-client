@@ -15,12 +15,44 @@
     align-items: center;
     background-color: $light-grey;
 
-    &__header {
+    &__nav {
+        display: flex;
+        justify-content: space-between;
+        background-color: $slate;
+        width: 100%;
+        margin-top: -0.5rem;
+        padding: 0.5rem;
+    }
+
+    &__nav-item {
 
     }
+
+    &__nav-link {
+        color: $light-grey;
+        font-size: $body-fontsize;
+        padding-bottom: 0.5rem;
+        padding: 0 0.5rem;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @include tablet {
+            flex-direction: row;
+            align-items: flex-start;
+        }
+    }
+
+    &__hero {
+        display: flex;
+        width: 100%;
+        padding: 1rem;
+    }
     
-    &__header-text {
-        padding: 0.5rem;
+    &__hero-header {
         font-size: 0.9rem;
         font-weight: 600;
 
@@ -31,51 +63,28 @@
         flex-direction: column;
         align-items: flex-start;
         width: 100%;
-        background-color: $background-blue;
+        background-color: #DEDEDE;
+        border-radius: 3px;
+        padding-bottom: 1rem;
+
+        @include tablet {
+            width: 30%;
+            align-items: center;
+        }
     }
 
     &__recent-header {
-        padding: 0 1rem;
+        padding-top: 0.7rem;
+        padding-left: 1rem;
         font-size: 1.2rem;
     }   
-
-    &__new {
-        @include inner-area;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0 0.5rem;
-    }
-
-    &__new-text {
-        text-align: left;
-    }
-
-    &__new-button {
-        margin-left: 5rem;
-    }
-
-    &__records {
-        @include inner-area;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0.5rem;
-    }
-
-    &__records-text {
-        text-align: left;
-    }
-
-    &__records-button {
-
-    }
               
     &__diagram {
         display: none;
 
         @include tablet {
             display: flex;
+            width: 30%
         }
         &--img {
             @include inner-area;
@@ -84,13 +93,23 @@
 
     &__terms {
         @include inner-area;
+        background-color: $background-blue;
+        padding: 0.5rem 1rem;
+
+        @include tablet {
+            width: 30%;
+            height:fit-content;
+        }
     }
 
     &__terms-header {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
+        padding-bottom: 1rem;
     }
 
     &__terms-text {
         font-size: $body-fontsize;
+        padding-bottom: 0.5rem;
+        font-weight: 600;
     }
 }

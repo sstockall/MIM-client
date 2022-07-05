@@ -1,7 +1,9 @@
 import RecordList from '../../components/RecordList/RecordList';
 import './RecordsPage.scss';
 import { useState, useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
 import axios from 'axios';
+import NewMole from '../../components/NewMole/NewMole';
 
 function RecordsPage({ history }) {
     const [isLoading, setIsLoading] = useState(true);
@@ -47,18 +49,9 @@ function RecordsPage({ history }) {
         console.log(err)
       })
     }
-
-    const toRecords = () => {
-        history.push('/records')
-      }
-  
-    const newRecord = () => {
-        setShowModal(true);
-    }
-
-    const cancelRecord = (e) => {
-        setShowModal(false);
-        e.preventDefault();
+    
+    const toggleModal = () => {
+      !showModal ? setShowModal(true) : setShowModal(false)
     }
 
     const submitRecord = (e) => {
@@ -69,6 +62,7 @@ function RecordsPage({ history }) {
             length: e.target.length.value,
             texture: e.target.texture.value,
             coloring: e.target.coloring.value,
+            special_info: e.target.special_info.value,
             user_id: userInfo.id
         })
         .then((res) => {
@@ -88,14 +82,37 @@ function RecordsPage({ history }) {
     :
         ( 
         <section className="records">
-            <div className='records__header'>
-                <h2 className='records__header-text'>Welcome To Your Records Page</h2>
-                <span className='records__header-subtext'>This is a place to keep all of your records organized and in one place.</span>
+          <NewMole 
+            show={showModal}
+            hideModal={toggleModal}
+            submitHandler={submitRecord}
+          />
+          <nav className='records__nav'>
+            <div className='records__nav-item'>
+              <NavLink to='/'className='records__nav-link'>Home</NavLink>
             </div>
+            <div className='records__nav-item'>
+              <NavLink to='/dashboard'className='records__nav-link'>Dashboard</NavLink>
+            </div>
+            <div className='records__nav-item'>
+              <span className='records__nav-link' onClick={toggleModal}>New Record</span>
+            </div>
+            <div className='records__nav-item'>
+              <span className='records__nav-link'>Terminology</span>
+            </div>
+          </nav>
+          <div className='records__header'>
+              <h2 className='records__header-text'>Store All of your Records in One Easy Place</h2>
+          </div>
+          <span className='records__click'>Click on any of the cards below for more details on the record.</span>
+          <div className='records__list'>
+            <h4 className='records__list-header'>Scroll right to access your full skin profile</h4>
             <RecordList 
-            records={userRecords}
-            isRecordPage={true}
+              records={userRecords}
+              isRecordPage={true}
+              updateRecords={updateRecords}
             />
+          </div>
         </section>
     );
 } 

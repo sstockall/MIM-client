@@ -10,13 +10,22 @@
         width: 90%;
         background-color: $light-grey;
         margin: 1rem;
-        box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.5)
+        box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.5);
+
+        @include tablet {
+            display: flex;
+        }
     }
     
     &__hero {
-        background-image: url('../../assets/images/dermatoscope.jpg');
+        background-image: url('../../assets/images/hero.jpg');
         background-size: cover;
+        background-repeat: no-repeat;
         border-radius: 3px;
+
+        @include tablet {
+            width: 50%;
+        }
     }
 
     &__hero-header {
@@ -28,11 +37,19 @@
         border-radius: 3px;
         box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
         padding: 1rem;
+
+        @include tablet {
+            width: 50%;
+        }
     }
 
     &__form-userinfo {
         display: flex;
         flex-direction: column;
+
+        @include tablet {
+            align-items: center;
+        }
     }
 
     &__form-header {

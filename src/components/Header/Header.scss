@@ -10,6 +10,10 @@
     padding: 1rem;
     background-image: linear-gradient(to top, $background-blue, white);
 
+    @include desktop {
+        padding: 1rem 7rem
+    }
+
     &__nav {
 
     }
