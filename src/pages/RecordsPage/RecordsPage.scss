@@ -41,7 +41,7 @@
 
     &__list {
         @include inner-area;
-        background-color: $accent;
+        background-color: white;
         max-height: 15rem;
         overflow-x: auto;
         overflow-y: hidden;
