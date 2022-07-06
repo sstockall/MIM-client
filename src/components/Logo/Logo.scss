@@ -3,15 +3,16 @@
 @use '../../styles/partials/mixins' as *;
 
 .logo {
-    
+   width: 50%;
+
     &__letter {
-        color: white;
-        font-family: 'Bebas Neue';
-        font-size: 3.5rem;
-        text-shadow: -0.08em 0.03em 0.12em rgba(0, 0, 0, 0.9);
+        color: $primary-text;
+        font-family: 'Montserrat';
+        font-size: 2rem;
+        text-shadow: -0.08em 0.03em 0.12em rgba(0, 0, 0, 0.5);
     }
 }
 
-div span:not(:first-child) {
-    margin-left: -0.1rem;
-}
+// div span:not(:first-child) {
+//     margin-left: -0.05rem;
+// }

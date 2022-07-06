@@ -8,7 +8,8 @@
 }
 
 body {
-    font-family: 'Playfair Display';
+    font-family: 'Montserrat';
+    font-weight: 400;
     color: $primary-text;
     background-color: $light-grey;
 }
@@ -20,19 +21,17 @@ a {
 }
 
 button {
-    background-color: $background-blue;
     color: $primary-text;
-    border: none;
-    padding: 0.5rem;
-    border-radius: 4px;
-    font-family: 'Playfair Display', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-weight: bold;
+    border: 1px solid $primary-text;
+    padding: 0.3rem;
+    border-radius: 2px;
+    font-family: 'Montserrat', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 600;
     font-size: 0.9rem;
 
     &:hover {
         cursor: pointer;
-        background-color: $primary-text;
-        color: white;
+        box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.7);
     }
 
 }
@@ -40,4 +39,9 @@ button {
 @keyframes fadeIn {
     0% { opacity: 0; }
     100% { opacity: 1; }
+  }
+
+  @keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0;}
   }

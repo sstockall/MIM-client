@@ -10,7 +10,7 @@ function HomePage() {
 
     return ( 
         <main className="home">
-            <section className='home__hero'>
+            {/* <section className='home__hero'>
                 <div className='home__hero-header'>
                     <div className='home__hero-header--let'>Let</div>
                     <div className='home__hero-header--us'>Us</div> 
@@ -18,12 +18,12 @@ function HomePage() {
                     <div className='home__hero-header--for'>For</div>
                     <div className='home__hero-header--you'>You</div>
                 </div>
-            </section>
+            </section> */}
             <section className='home__lower'>
                 <section className='home__info'>
                     <div className='home__info-header'>
                         <span className='home__text-box--mim'>MolesInMotion</span>
-                        <p className='home__text-box'>makes tracking your moles easy!</p>
+                        <p className='home__text-box'>A mole tracking app to help keep your skin safe and your mind clear</p>
                     </div>
                     <div className='home__info-content'>
                         <div className='home__info-wrapper'>
@@ -57,16 +57,16 @@ function HomePage() {
                         </div>
                     </div>
                 </section>
-                <div className='home__cta'>
-                    <NavLink to='/signup' className='home__cta-link'>Sign Up</NavLink>
-                    <span className='home__cta-text'>now and get started on your mole map today!</span>
-                </div>
                 <section className='home__lesions'>
                     <h2 className='home__lesions-header'>See A Spot You're Not Sure About? </h2>
                     <span className='home__lesions-span'>
                         Take a look at our list of <NavLink to='/lesions' className='home__lesions-link'> common skin lesions</NavLink>, their characteristics, and treatment options.
                     </span>
-                </section>
+                </section> 
+                <div className='home__cta'>
+                    <NavLink to='/signup' className='home__cta-link'>Sign Up</NavLink>
+                    <span className='home__cta-text'>now and get started on your mole map today!</span>
+                </div>
             </section>
         </main>
      );

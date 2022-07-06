@@ -105,30 +105,23 @@ function DashboardPage({ history }) {
       (
         <main className='dashboard'>
           <NewMole 
-          show={showModal}
-          hideModal={cancelRecord}
-          submitHandler={submitRecord}
-          buttonText='Create Record'
-          create={true}
+            show={showModal}
+            hideModal={cancelRecord}
+            submitHandler={submitRecord}
+            buttonText='Create Record'
+            create={true}
           />
-          <nav className='dashboard__nav'>
-            <div className='dashboard__nav-item'>
-              <NavLink to='/'className='dashboard__nav-link'>Home</NavLink>
-            </div>
-            <div className='dashboard__nav-item'>
-              <NavLink to='/records'className='dashboard__nav-link'>Records</NavLink>
-            </div>
-            <div className='dashboard__nav-item'>
-              <span className='dashboard__nav-link' onClick={handleLogout}>{loggedIn ? 'Log Out' : 'Log In'}</span>
-            </div>
-          </nav>
           <section className='dashboard__hero'>
             <h1 className='dashboard__hero-header'>welcome back {userInfo.first_name}!</h1>
             <button onClick={newRecord}>New Mole</button>
           </section>
           <section className='dashboard__lower'>
               <div className='dashboard__recent'>
-                <h2 className='dashboard__recent-header'>Recent Records</h2>
+                <div className='dashboard__recent-text'>
+                  <h2 className='dashboard__recent-header'>Recent Records</h2>
+                  <span className='dashboard__recent-text'>Can't find what you're looking for?</span>
+                  <span className='dashboard__recent-text'>Head over to your <NavLink to='/records'>records page</NavLink> for your full skin profile.</span>
+                </div>
                 <div className='dashboard__recent-list'>
                   <RecordList 
                   records={userRecords}

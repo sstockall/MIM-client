@@ -21,8 +21,6 @@
     &__hero {
         background-image: url('../../assets/images/dermatoscope.jpg');
         background-size: cover;
-        border-radius: 3px;
-        box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
         padding-top: 6rem;
         display: flex;
         flex-direction: column;
@@ -67,14 +65,6 @@
             font-style: italic;
             padding-bottom: 0.5rem;
         }
-    }
-
-    &__form-inputs {
-
-    }
-
-    &__form-field {
-
     }
 
     &__form-submit {

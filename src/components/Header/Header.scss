@@ -4,14 +4,16 @@
 
 .header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    border-bottom:1px solid rgba(216, 216 , 216, .5);
-    padding: 1rem;
-    background-image: linear-gradient(to top, $background-blue, white);
+    border-bottom: 1px solid rgba(0, 0, 0, .5);
+    padding: 0 0.5rem;
 
     @include desktop {
         padding: 1rem 7rem
+    }
+
+    &__nav {
+        width: 40%;
     }
 }
 

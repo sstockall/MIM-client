@@ -8,60 +8,6 @@
     flex-direction: column;
     justify-content: center;
 
-    &__hero {
-        background: url('../../assets/images/mole-shoulder.jpg') rgba(0, 134, 179, 0.2);
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-blend-mode: multiply;
-        display: flex;
-        margin-top: -1rem;
-
-        @include tablet {
-            padding-top: 11rem;
-        }
-
-        @include desktop {
-            padding-top: 15rem;
-        }
-    }
-
-    &__hero-header {
-        display: flex;
-        flex-wrap: wrap;
-        width: 35%;
-        padding: 1rem 0;
-        padding-left: 1rem;
-        font-size: 1.7rem;
-
-        &--let {
-            @include hero-words;
-            animation: fadeIn 5s;
-            
-        }
-
-        &--us {
-            @include hero-words;
-            font-weight: 800;
-            animation: fadeIn 10s;
-        }
-
-        &--worry {
-            @include hero-words;
-            animation: fadeIn 15s;
-        }
-
-        &--for {
-            @include hero-words;
-            animation: fadeIn 20s;
-        }
-
-        &--you {
-            @include hero-words;
-            font-weight: 800;
-            animation: fadeIn 25s;
-        }
-    }
-
     &__lower {
         display: flex;
         flex-direction: column;
@@ -136,7 +82,10 @@
 
     &__info-content {
         @include inner-area;
-         background-color: $cloud;
+        background: url('../../assets/images/mole-shoulder.jpg') rgba(0, 0, 0, 0.1);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-blend-mode: multiply;    
     }
 
     &__info-wrapper {
@@ -153,7 +102,7 @@
     &__info-text {
        text-align: center;
        font-size: $body-fontsize;
-       font-weight: 600;
+       font-weight: 400;
     }
 
 
@@ -233,9 +182,11 @@
         @include inner-area;
         display: flex;
         flex-direction: column;
-        padding: 1rem;
-        background-color: $background-blue;
-       
+        background: url('../../assets/images/mirror.jpg') rgba(0, 0, 0, 0.1);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-blend-mode: multiply;
+        padding: 2rem;
 
         @include desktop {
             justify-content: flex-start;
@@ -247,6 +198,7 @@
         font-size: 1.2rem;
         padding: 0.5rem;
         text-align: center;
+        color: white;
 
         @include desktop {
             font-size: 1.5rem;
@@ -257,6 +209,7 @@
     &__lesions-span {
         font-size: $body-fontsize;
         text-align: center;
+        color: white;
 
         @include desktop {
             font-size: 1rem;
@@ -265,7 +218,7 @@
     }
 
     &__lesions-link {
-        color: white;
+        color: $background-blue;
         font-size: $body-fontsize;
         font-weight: 600;
 
@@ -273,6 +226,5 @@
             font-size: 1rem;
             text-align: center;
         }
-    }
-                
+    }              
 }

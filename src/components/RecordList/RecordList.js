@@ -3,7 +3,7 @@ import Record from '../Record/Record';
 
 function RecordList({ records, isRecordPage, updateRecords }) {
 
-    const dashboardArr = records.slice(0, 3);
+    const dashboardArr = records.slice(0, 4);
     return isRecordPage ?  
         ( 
             <ul className='records-list'>
