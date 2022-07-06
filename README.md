@@ -1,70 +1,83 @@
-# Getting Started with Create React App
+# MIM - MolesInMotion
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+MIM is a mole tracking web app designed to allow users to accurately and promptly track any pigmented lesions on their skin.
 
-## Available Scripts
+This project is for any user wanting to keep a closer eye on their moles, with an emphasis on people with a history of skin cancer. 
 
-In the project directory, you can run:
+## ProblemSpace
 
-### `npm start`
+One of the greatest issues facing dermatologists, their staff, and their patients is the ever increasing wait time for appointments. 
+With a shortage in dermatoligsts and patient lists growing larger, it can be very hard to schedule an appointment with your dermatologist, and even harder to get a referral to see a new one.
+A large contributing factor to increased wait times is the need to see existing patients, specifically ones with a history of skin cancer, whenever they feel a mole has changed. Often times the patient is unsure if the spot has changed, as they cannot keep track all the pigmented lesions on their body. 
+This results in an anxious patient who needs to be seen, just in case the mole HAS changed. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## The Design
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+MIM allows patients to create individual records for each mole they feel merits supervision. With multiple fields for in depth description, the hope is that patients will be able to compare past photos, measurement, and descriptions to their current mole profile to definitviely know if something has changed. This will help to decrease patient anxiety, as well as free up appointment slots for their dermatologists. 
 
-### `npm test`
+## Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Account sign up and login for to ensure sensitive information is secure.
 
-### `npm run build`
+Make, edit and delete records of individual moles, wth a list of recent records on dashboard, and full record page. 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Modal on click of record for in depth information and edit/delete functions. 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Separate page for common skin lesions and how to identify them, as well as a page of anatomical terminaology to help with specific labelling. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Tech Stack
 
-### `npm run eject`
+ClientSide: React, JS, JSX, SCSS
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+ServerSide: Node.js, Express,js, SQL/MySQL
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Dependencies 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+ClientSide: axios, react-router-dom@5.3, sass
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+ServerSide: axios, bcryptjs, cloudinary, multer, cors, dotenv, express, jsonwebtoken, knex, multer-storage-cloudinary, mysql, uuid
 
-## Learn More
+## Installation 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### ServerSide
+This can be done first, as the client side application depends on the server running.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Open VSCode, select Clone Git Repository in Get Started tab.
+2. A search bar will pop up at the top of the window, with an option to select 'Clone from GitHub'. Click on this. 
+3. Allow pop up to use Github to open and follow authentication instructions. 
+4. From the dropdown, select sstockall/MIM-server and choose a folder to save repository in (recommended saving directly to Desktop).
+5. You will be asked if you would like to open new repository, select yes.
+6. Once repository is open, navigate to the tool bar at the top of the screen and select 'Terminal' --> 'New Terminal'.
 
-### Code Splitting
+**Each command typed into the terminal should be followed by enter**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+7. If you are not in the repository, navigate into it on the command line (i.e cd <desktop> (enter), followed by cd <repo name> (enter)).
+8. Once in the appropriate repository, initialize and install by running the command 'npm i'.
+9. Install all of the SERVER Side dependencies listed above by typing 'npm i <dependency-name> (just type actual dependency name, no need for the brackets).
+10. Run the command 'npm i nodemon'.
+11. You should see the message in the terminal that the server is listening on port 8080. You can now install the ClientSide app, as describe below. 
 
-### Analyzing the Bundle Size
+### ClientSide: 
+1. Follow steps 1-8 from above, with some small changes as follows:
+    Step 4: select sstockall/MIM-client from dropdown instead
+2.Install all of the CLIENT side dependencies listed above by typing 'npm i <dependency-name> (just type actual dependency name, no need for the brackets).
+3. Once these have finished installing, start running app by typing 'npm start' into command line. This will open the app in your browser. It may take some time, be patient and watch for any errors in your terminal. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Lessons Learned
 
-### Making a Progressive Web App
+Cloudinary is a very helpful and intuitive cloud storage option for beginners.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+React hooks make life so much easier, especially for a junior dev!
 
-### Advanced Configuration
+Make it work, then make it right, THEN make it pretty. I definitely got wrapped up in styling a bit too much at the beginning, and ended up having to restyle or even throw out some work after incorporating the functionality and realising it wouldnt work the way I had it styled.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Next Steps
 
-### Deployment
+My original vision for MIM was to have an interactive map of the body, with clickability and pin dropping. I still hope to eventually get there, but in the mean time will be working on the responsive design (mostly the desktop breakpoint), as well as bring in more information to the common lesion and terminology pages. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Contact Info
 
-### `npm run build` fails to minify
+[Github] (https://www.github.com/sstockall)
+[LinkedIn] (https://www.linkedin.com/in/samantha-stockall/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[Email] (sam.stockall@hotmail.com)
