@@ -9,6 +9,7 @@
     width:100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.6);
+    z-index: 2;
 
     &__main {
         position:fixed;
@@ -119,19 +120,19 @@
     }
 
     &__text {
-        font-size: $body-fontsize;
-        font-style: italic;
+        font-size: 0.6rem;
+        font-weight: 600;
         text-align: center;
     }
 
     &__input {
         font-size: 0.6rem;
-        font-weight: 800;
+        font-weight: 400;
         text-align: center;
         padding: 0 0.5rem;
 
         &--small {
-            font-size: 0.8rem;
+            font-size: $body-fontsize;
         }
     }
 }

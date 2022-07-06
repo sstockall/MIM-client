@@ -113,21 +113,21 @@ function DashboardPage({ history }) {
           />
           <section className='dashboard__hero'>
             <h1 className='dashboard__hero-header'>welcome back {userInfo.first_name}!</h1>
-            <button onClick={newRecord}>New Mole</button>
+            <button onClick={newRecord}>New Mole?</button>
           </section>
           <section className='dashboard__lower'>
               <div className='dashboard__recent'>
-                <div className='dashboard__recent-text'>
-                  <h2 className='dashboard__recent-header'>Recent Records</h2>
-                  <span className='dashboard__recent-text'>Can't find what you're looking for?</span>
-                  <span className='dashboard__recent-text'>Head over to your <NavLink to='/records'>records page</NavLink> for your full skin profile.</span>
-                </div>
+                <h2 className='dashboard__recent-header'>Recent Records</h2>
                 <div className='dashboard__recent-list'>
                   <RecordList 
                   records={userRecords}
                   isRecordPage={false}
                   updateRecords={updateRecords}
                   />
+                </div>
+                <div className='dashboard__recent-text'>
+                  <span className='dashboard__recent-span'>*Can't find what you're looking for?</span>
+                  <span className='dashboard__recent-span'>*Head over to your <NavLink to='/records'>records page</NavLink> for your full skin profile.</span>
                 </div>
               </div>
               <div className='dashboard__wrapper'>
@@ -140,7 +140,7 @@ function DashboardPage({ history }) {
                 <section className='dashboard__signs'>
                   <h2 className='dashboard__signs-header'>Warning Signs</h2>
                   <span className='dashboard__signs-text'>Early detection is key in treating skin cancer. Below is a list of things to keep in mind when doing your self exams.</span>
-                  <img className='dashboard__signs-img' src={ABC} alt='diagram' />
+                  {/* <img className='dashboard__signs-img' src={ABC} alt='diagram' /> */}
                 </section>
               </div>
           </section>

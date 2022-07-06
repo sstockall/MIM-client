@@ -8,7 +8,7 @@
 }
 
 body {
-    font-family: 'Montserrat';
+    font-family: 'Montserrat', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: 400;
     color: $primary-text;
     background-color: $light-grey;
@@ -26,8 +26,9 @@ button {
     padding: 0.3rem;
     border-radius: 2px;
     font-family: 'Montserrat', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-weight: 600;
+    font-weight: 400;
     font-size: 0.9rem;
+    margin: 0 0.5rem;
 
     &:hover {
         cursor: pointer;

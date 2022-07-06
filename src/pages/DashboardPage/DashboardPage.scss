@@ -27,28 +27,6 @@
         padding: 0 7rem;
     }
 
-    &__nav {
-        display: flex;
-        justify-content: space-around;
-        background-color: $slate;
-        width: 100%;
-        margin-top: -0.5rem;
-        padding: 0.5rem;
-        border-radius: 3px;
-    }
-
-    &__nav-link {
-        color: $light-grey;
-        font-weight: 600;
-        font-size: $body-fontsize;
-        padding-bottom: 0.5rem;
-        padding: 0 0.5rem;
-
-        &:hover {
-            cursor: pointer;
-        }
-    }
-
     &__lower {
         display: flex;
         flex-direction: column;
@@ -76,13 +54,12 @@
     }
     
     &__hero-header {
-        font-size: 0.9rem;
-        font-weight: 600;
+        font-size: 0.8rem;
+        font-weight: 400;
     }
 
     &__recent {
         @include inner-area;
-        background-color: $cloud;
 
         @include tablet {
             align-items: center;
@@ -94,14 +71,25 @@
         }
     }
 
+    &__recent-text {
+        display: flex;
+        flex-direction: column;
+    }
+
     &__recent-header {
         padding-top: 0.7rem;
         padding-left: 1rem;
+        text-align: center;
 
         @include tablet {
-            text-align: center;
+            
         }
-    }   
+    }  
+    
+    &__recent-span {
+        padding: 0.2rem 1rem;
+        font-size: 0.6rem;
+    }
 
     &__wrapper {
         display: flex;
@@ -117,10 +105,13 @@
     &__terms {
         @include inner-area;
         padding: 0.5rem 1rem;
+        background: url('../../assets/images/arm.png') rgba(0, 0, 0, 0.7);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-blend-mode: multiply; 
 
         @include tablet {
             width: 45%;
-            height:fit-content;
             margin: 0 1rem;
         }
 
@@ -132,12 +123,14 @@
     &__terms-header {
         font-size: 1.5rem;
         padding-bottom: 1rem;
+        color: white;
     }
 
     &__terms-text {
         font-size: $body-fontsize;
         padding-bottom: 0.5rem;
-        font-weight: 600;
+        font-weight: 400;
+        color: white
     }
 
     &__signs {
@@ -146,7 +139,10 @@
         flex-direction: column;
         align-items: center;
         padding: 1rem;
-        background-color: $background-blue;
+        background: url('../../assets/images/earlydet.jpeg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-blend-mode: multiply;   
 
         @include tablet {
             width: 45%;
@@ -161,7 +157,7 @@
     &__signs-text {
         text-align: center;
         font-size: $body-fontsize;
-        font-weight: 600;
+        font-weight: 400;
         padding: 1rem 0;
     }
 
