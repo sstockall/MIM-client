@@ -10,11 +10,13 @@
 body {
     font-family: 'Playfair Display';
     color: $primary-text;
+    background-color: $light-grey;
 }
 
 a {
     text-decoration: none;
-    color: white;
+    color: $color1;
+    font-weight: 600;
 }
 
 button {
@@ -34,3 +36,8 @@ button {
     }
 
 }
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }

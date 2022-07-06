@@ -15,21 +15,23 @@
     align-items: center;
     background-color: $light-grey;
 
+    @include desktop {
+        padding: 0 7rem;
+    }
+
     &__nav {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         background-color: $slate;
         width: 100%;
         margin-top: -0.5rem;
         padding: 0.5rem;
-    }
-
-    &__nav-item {
-
+        border-radius: 3px;
     }
 
     &__nav-link {
         color: $light-grey;
+        font-weight: 600;
         font-size: $body-fontsize;
         padding-bottom: 0.5rem;
         padding: 0 0.5rem;
@@ -39,70 +41,86 @@
         }
     }
 
-    &__content {
+    &__lower {
         display: flex;
         flex-direction: column;
         align-items: center;
 
         @include tablet {
             flex-direction: row;
-            align-items: flex-start;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: baseline;
+        }
+
+        @include desktop {
+            flex-wrap: nowrap;
+            justify-content: space-between;
         }
     }
 
     &__hero {
         display: flex;
+        align-items: center;
         width: 100%;
         padding: 1rem;
+
+        @include tablet {
+            justify-content: space-between;
+        }
     }
     
     &__hero-header {
         font-size: 0.9rem;
         font-weight: 600;
-
     }
 
     &__recent {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        width: 100%;
-        background-color: #DEDEDE;
-        border-radius: 3px;
-        padding-bottom: 1rem;
+        @include inner-area;
+        background-color: $cloud;
 
         @include tablet {
-            width: 30%;
             align-items: center;
+            margin: 1rem;
+        }
+
+        @include desktop {
+            
         }
     }
 
     &__recent-header {
         padding-top: 0.7rem;
         padding-left: 1rem;
-        font-size: 1.2rem;
-    }   
-              
-    &__diagram {
-        display: none;
 
         @include tablet {
-            display: flex;
-            width: 30%
+            text-align: center;
         }
-        &--img {
-            @include inner-area;
+    }   
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @include tablet {
+            flex-direction: row;
+            align-items: baseline
         }
     }
 
     &__terms {
         @include inner-area;
-        background-color: $background-blue;
         padding: 0.5rem 1rem;
 
         @include tablet {
-            width: 30%;
+            width: 45%;
             height:fit-content;
+            margin: 0 1rem;
+        }
+
+        @include desktop {
+            order: 2
         }
     }
 
@@ -115,5 +133,38 @@
         font-size: $body-fontsize;
         padding-bottom: 0.5rem;
         font-weight: 600;
+    }
+
+    &__signs {
+        @include inner-area;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+        background-color: $background-blue;
+
+        @include tablet {
+            width: 45%;
+            margin: 1rem;
+        }
+
+        @include desktop {
+            order: 1
+        }
+    }
+
+    &__signs-text {
+        text-align: center;
+        font-size: $body-fontsize;
+        font-weight: 600;
+        padding: 1rem 0;
+    }
+
+    &__signs-img {
+        width: 100%;
+
+        &:hover {
+            cursor: pointer;
+        }
     }
 }

@@ -11,10 +11,6 @@
     @include desktop {
         padding: 1rem 7rem
     }
-
-    &__logo {
-
-    }
                 
     &__pages {
         display: flex;
@@ -24,5 +20,6 @@
 
     &__link {
         font-size: 0.75rem;
+        color: white;
     }
 }

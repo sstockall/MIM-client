@@ -1,11 +1,18 @@
 import './NewMole.scss'
 import InputField from '../InputField/InputField';
+import { useEffect } from 'react';
 
-function NewMole( { show, submitHandler, hideModal, location, width, length, texture, coloring, special, image, id }) {
-    const showHideClass = show ? "new-mole display-block" : "new-mole display-none" 
+function NewMole( { show, submitHandler, hideModal, location, width, length, texture, coloring, special, create, buttonText, image, id }) {
+    const showHideClass = show ? "new-mole display-block" : "new-mole display-none";
+    const modalType = create ? "new-mole__main" : "new-mole__main-edit";
+
+    useEffect(() => {
+        window.scrollTo(0,0)
+      }, [])
+
     return (  
         <section className={showHideClass}>
-                <div className='new-mole__main'>
+                <div className={modalType}>
                     <div className='new-mole__content'>
                         <div className='new-mole__header'>
                             <h2 className='new-mole__header-text'>New Mole Record</h2>
@@ -25,7 +32,7 @@ function NewMole( { show, submitHandler, hideModal, location, width, length, tex
                                 </div>
                             </div>
                             <div className='new-mole__buttons'>
-                                <button className='new-mole__submit-button'>Create Record</button>
+                                <button className='new-mole__submit-button'>{buttonText}</button>
                                 <button type='button' className='new-mole__cancel-button' onClick={hideModal}>Cancel</button>
                             </div>
                         </form>

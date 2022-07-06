@@ -6,7 +6,6 @@
     list-style-type: none;
     padding: 0.5rem;
     display: flex;
-    background-color: white;
 
     @include tablet {
         flex-wrap: wrap;
@@ -27,13 +26,17 @@
 }
 
 .records-list__recent {
+    list-style-type: none;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    list-style-type: none;
-    width: 100%;
+   
 
     @include tablet {
+        align-items: center;
+    }
+
+    @include desktop {
         flex-direction: column;
         align-items: center;
     }

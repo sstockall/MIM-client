@@ -8,7 +8,12 @@
     align-items: center;
     background-color: $light-grey;
 
+    @include desktop {
+        padding: 0 8rem;
+    }
+
     &__nav {
+        @include inner-area;
         display: flex;
         justify-content: space-between;
         background-color: $slate;
@@ -28,30 +33,28 @@
         }
     }
 
+    &__header {
+        @include inner-area;
+    }
+
     &__header-text {
         font-size: 1.2rem;
         text-align: center;
-        padding: 0.5rem
-    }
-
-    &__click {
-        font-size: $body-fontsize;
-        margin: 0 1rem;
+        padding: 0.5rem;
     }
 
     &__list {
         @include inner-area;
-        background-color: white;
         max-height: 15rem;
         overflow-x: auto;
         overflow-y: hidden;
+        background-color: $cloud;
 
         @include tablet {
             max-height: 35rem;
             overflow-x: hidden;
             overflow-y: auto;
         }
-
     }
 
     &__list-header {
@@ -63,6 +66,10 @@
 
         @include tablet {
             display: none;
+        }
+
+        &--bottom {
+            padding-bottom: 0.5rem;
         }
     }
 }

@@ -57,26 +57,32 @@ function RecordsPage({ history }) {
     const toggleModal = () => {
       !showModal ? setShowModal(true) : setShowModal(false)
     }
-
     const submitRecord = (e) => {
-        e.preventDefault();
-        axios.post('http://localhost:8080/dashboard/records', {
+      e.preventDefault();
+      let formData = new FormData();
+      formData.append("image", e.target.image.files[0]);
+      formData.append('upload_preset', 'phk0eezk')
+      
+      axios.post('http://localhost:8080/images', formData)
+        .then((res) => {
+          axios.post('http://localhost:8080/dashboard/records', {
+            image_url: res.data.path,
             location: e.target.location.value,
             width: e.target.width.value,
             length: e.target.length.value,
             texture: e.target.texture.value,
             coloring: e.target.coloring.value,
             special_info: e.target.special_info.value,
-            user_id: userInfo.id
-        })
-        .then((res) => {
+            user_id: userInfo.id,
+          })
+          .then(() => {
             e.target.reset();
             setShowModal(false);
             updateRecords();  
+          })
+          .catch((err) => console.error(err));
         })
-        .catch((error) => {
-            console.log(error)
-        });
+        .catch((err) => console.log(err))
     }
 
     return isLoading ?
@@ -90,6 +96,8 @@ function RecordsPage({ history }) {
             show={showModal}
             hideModal={toggleModal}
             submitHandler={submitRecord}
+            buttonText='Create Record'
+            create={true}
           />
           <nav className='records__nav'>
             <div className='records__nav-item'>
@@ -106,16 +114,16 @@ function RecordsPage({ history }) {
             </div>
           </nav>
           <div className='records__header'>
-              <h2 className='records__header-text'>Store All of your Records in One Easy Place</h2>
+              <h2 className='records__header-text'>Store All of Your Records in One Easy Place</h2>
           </div>
-          <span className='records__click'>Click on any of the cards below for more details on the record.</span>
           <div className='records__list'>
-            <h4 className='records__list-header'>Scroll right to access your full skin profile</h4>
+            <h4 className='records__list-header'>Click on any of the cards below for more details.</h4>
             <RecordList 
               records={userRecords}
               isRecordPage={true}
               updateRecords={updateRecords}
             />
+            <h4 className='records__list-header records__list-header--bottom'>Scroll right to access your full skin profile</h4>
           </div>
         </section>
     );

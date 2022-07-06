@@ -3,7 +3,7 @@ import close from '../../assets/icons/close.svg';
 import deleteIcon from '../../assets/icons/bin.png';
 import editIcon from '../../assets/icons/edit_icon.png';
 import axios from 'axios';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import DeleteModal from '../DeleteModal/DeleteModal';
 import NewMole from '../NewMole/NewMole';
 
@@ -14,6 +14,10 @@ function RecordDetails({ id, location, width, length, texture, coloring, special
     
     const [deleteModal, setDeleteModal] = useState(false); 
     const [editModal, setEditModal] = useState(false);
+
+    useEffect(() => {
+        window.scrollTo(0,0)
+      }, [])
 
     const toggleDelete = () => {
         !deleteModal ? setDeleteModal(true) : setDeleteModal(false)
@@ -73,11 +77,19 @@ function RecordDetails({ id, location, width, length, texture, coloring, special
                     coloring={coloring}
                     special={special}
                     image={image}
+                    buttonText='Edit'
+                    create={false}
                 />
-                <img className='record-details__close' src={close} alt='close' onClick={closeModal}/>
+                <div className='record-details__buttons'>
+                    <div className='record-details__buttons-edit'>
+                        <img className='record-details__buttons--edit'src={editIcon} alt='edit' onClick={toggleEdit}/>
+                        <img className='record-details__buttons--delete'src={deleteIcon} alt='delete'onClick={toggleDelete} />
+                    </div>
+                    <img className='record-details__close' src={close} alt='close' onClick={closeModal}/>
+                </div>
                 <div className='record-details__sections'>
                     <div className='record-details__section record-details__section--image '>
-                        <img src={image} alt='' />
+                        <img className='record-details__pic' src={image} alt='' />
                     </div>
                     <div className='record-details__section'>
                         <span className='record-details__text'>Location:</span>
@@ -106,10 +118,6 @@ function RecordDetails({ id, location, width, length, texture, coloring, special
                     <div className='record-details__section record-details__section--special'>
                         <span className='record-details__text'>Special Info:</span>
                         <span className='record-details__input'>{special}</span>
-                    </div>
-                    <div className='record-details__buttons'>
-                        <img className='record-details__buttons--edit'src={editIcon} alt='edit' onClick={toggleEdit}/>
-                        <img className='record-details__buttons--delete'src={deleteIcon} alt='delete'onClick={toggleDelete} />
                     </div>
                 </div>
             </div>

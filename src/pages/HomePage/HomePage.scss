@@ -13,50 +13,62 @@
         background-repeat: no-repeat;
         background-size: cover;
         background-blend-mode: multiply;
-        padding-top: 9rem;
         display: flex;
+        margin-top: -1rem;
 
         @include tablet {
             padding-top: 11rem;
         }
 
         @include desktop {
-            padding-top: 18rem;
+            padding-top: 15rem;
         }
     }
 
     &__hero-header {
-        font-weight: 600;
-        font-size: 1.8rem;
-        text-align: left;
-        padding: 0 0 0.5rem 0.5rem;
-    }
-
-    &__text {
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 0.5rem;
-    }
+        flex-wrap: wrap;
+        width: 35%;
+        padding: 1rem 0;
+        padding-left: 1rem;
+        font-size: 1.7rem;
 
-    &__text-box {
-        font-size: $body-fontsize;
-        font-weight: 600;
-        line-height: 1rem;
-        padding: 0.5rem 0;
+        &--let {
+            @include hero-words;
+            animation: fadeIn 5s;
+            
+        }
 
-        &--mim {
-            color: $background-blue;
+        &--us {
+            @include hero-words;
             font-weight: 800;
-            font-size: 1rem;
-            text-shadow: -0.08em 0.03em 0.12em rgba(0, 0, 0, 0.1);
+            animation: fadeIn 10s;
+        }
+
+        &--worry {
+            @include hero-words;
+            animation: fadeIn 15s;
+        }
+
+        &--for {
+            @include hero-words;
+            animation: fadeIn 20s;
+        }
+
+        &--you {
+            @include hero-words;
+            font-weight: 800;
+            animation: fadeIn 25s;
         }
     }
 
     &__lower {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
         @include desktop {
-            display: flex;
+            padding: 0 8rem;
         }
     }
 
@@ -70,28 +82,43 @@
         }
 
         @include desktop {
-            width: 50%;
-            flex-direction: column;
-           
+            flex-direction: column
         }
     }
 
     &__info-header {
-        width: 95%;
-        border-radius: 2px;
-        box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.4);
-        background-color: white;
-        padding: 0.5rem;
-        margin: 1rem 0;
+        @include inner-area;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
         @include tablet {
             width: 40%;
-            padding: 2rem 0;
+            padding: 2rem 1rem;
             margin: 1rem;
         }
 
         @include desktop {
             width: 80%;
+        }
+    }
+
+    &__text-box {
+        font-size: 1rem;
+        font-weight: 600;
+        line-height: 1rem;
+        padding: 0.5rem 0;
+        text-align: center;
+
+        @include tablet {
+            line-height: 2rem;
+        }
+
+        &--mim {
+            font-weight: 800;
+            font-size: 2rem;
+            text-shadow: -0.08em 0.03em 0.12em rgba(0, 0, 0, 0.1);
         }
     }
 
@@ -107,7 +134,12 @@
         }
     }
 
-    &__info-textbox {
+    &__info-content {
+        @include inner-area;
+         background-color: $cloud;
+    }
+
+    &__info-wrapper {
         display: flex;
         flex-direction: column;
 
@@ -116,6 +148,12 @@
         @include tablet {
             padding-bottom: 0;
         }
+    }
+
+    &__info-text {
+       text-align: center;
+       font-size: $body-fontsize;
+       font-weight: 600;
     }
 
 
@@ -135,75 +173,80 @@
 
     &__list-item {
         font-size: $body-fontsize;
-        font-weight: 600;
+        font-weight: 800;
         padding: 0 0.5rem;
 
-        &--description {
-            display: none;
+        @include tablet {
+            display: flex;
+            align-items: baseline;
+        }
+
+        &--title {
 
             @include tablet {
-                display: inline;
-                font-size: 0.7rem;
-                font-style: normal;
-                padding-left: 0.5rem;
+                width: 30%;
+                padding-right: 4rem;
             }
         }
-        
+
+        &--description {
+            display: none;  
+
+            @include tablet {
+                display: block;
+                font-style: italic;
+                font-weight: 400;
+                padding: 0.5rem;
+                width: 70%;
+            }
+        }    
     }
 
-    &__info-text {
+    &__cta {
+        @include inner-area;
         font-size: $body-fontsize;
+        font-weight: 600;
         text-align: center;
         font-style: italic;
+        padding: 1rem;
+
+        @include desktop {
+            width: 45%;
+        }
     }
            
-    &__info-cta {
+    &__cta-text {
         text-align: left;
         font-size: $body-fontsize;
-        padding: 0.5rem;
         text-align: center;
         
     }
 
-    &__info-link {
+    &__cta-link {
         color: $background-blue;
         font-weight: 800;
         font-style: italic;
-        padding-right: 0.7rem;
+        padding-right: 0.5rem;
     }
 
     &__lesions {
+        @include inner-area;
         display: flex;
-        justify-content: center;
+        flex-direction: column;
+        padding: 1rem;
+        background-color: $background-blue;
+       
 
         @include desktop {
             justify-content: flex-start;
-        }
-    }
-
-    &__lesions-inner {
-        width: 90%;
-        border-radius: 5px;
-        box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.7);
-        background-color: $background-blue;
-        padding: 0.5rem;
-        margin: 1rem 0;
-
-        @include tablet {
             width: 45%;
-        }
-
-        @include desktop {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-evenly;
         }
     }
 
     &__lesions-header {
         font-size: 1.2rem;
         padding: 0.5rem;
-        text-align: left;
+        text-align: center;
 
         @include desktop {
             font-size: 1.5rem;
@@ -211,15 +254,9 @@
         }
     }
 
-    &__lesions-text {
-       display: flex;
-       flex-direction: column;
-       padding: 0.5rem;
-    }
-
     &__lesions-span {
         font-size: $body-fontsize;
-        text-align: left;
+        text-align: center;
 
         @include desktop {
             font-size: 1rem;
@@ -230,6 +267,7 @@
     &__lesions-link {
         color: white;
         font-size: $body-fontsize;
+        font-weight: 600;
 
         @include desktop {
             font-size: 1rem;

@@ -1,37 +1,27 @@
-import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import Logo from '../Logo/Logo';
-import menuIcon from '../../assets/icons/hamburger.png';
 import './Header.scss'
 
 function Header() {
 
-    const [showMenu, setShowMenu] = useState(false)
-
-    const toggleMenu = () => {
-        !showMenu ? setShowMenu(true) : setShowMenu(false)
-    }
-
     return ( 
         <header className="header">
             <nav className='header__nav'>
-                <div className="header__dropdown">
-                    <div 
-                        className="dropbtn" 
-                        onClick={toggleMenu}>
-                        <img className='dropbtn__img' src={menuIcon} alt='avatar' />
-                    </div>
-                    <div 
-                    className={showMenu ? "header__dropdown-content display-block" : "header__dropdown-content display-none"}
-                    onMouseOut={toggleMenu}
-                    >
-                        <NavLink to='/login'>Login</NavLink>
-                        <NavLink to='dashboard'>Dashboard</NavLink>
-                        <NavLink to='/glossary'>Glossary</NavLink>
+                <div className="menu-wrapper">
+                    <div className="menu">
+                        <ul className="nav-links">
+                            <NavLink className='nav-links__link'to='/'><li>Home</li></NavLink>
+                            <NavLink to='/dashboard'><li>Dashboard</li></NavLink>
+                            <NavLink to='/lesions'><li>Lesions</li></NavLink>
+                            <NavLink to='/terminology'><li>Terminology</li></NavLink>
+                        </ul>
                     </div>
                 </div>
             </nav>
             <Logo />
+            <div className='header__login'>
+                <NavLink to='/login'>Login</NavLink>
+            </div>
         </header>
      );
 }
