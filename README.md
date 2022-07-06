@@ -55,12 +55,13 @@ This can be done first, as the client side application depends on the server run
 8. Once in the appropriate repository, initialize and install by running the command 'npm i'.
 9. Install all of the SERVER Side dependencies listed above by typing 'npm i <dependency-name> (just type actual dependency name, no need for the brackets).
 10. Run the command 'npm i nodemon'.
-11. You should see the message in the terminal that the server is listening on port 8080. You can now install the ClientSide app, as describe below. 
+11. You should see the message in the terminal that the server is listening on port 8080. You can now install the ClientSide app, as described below. 
 
 ### ClientSide: 
+
 1. Follow steps 1-8 from above, with some small changes as follows:
-    Step 4: select sstockall/MIM-client from dropdown instead
-2.Install all of the CLIENT side dependencies listed above by typing 'npm i <dependency-name> (just type actual dependency name, no need for the brackets).
+    * Step 4: select sstockall/MIM-client from    dropdown instead.
+2. Install all of the CLIENT side dependencies listed above by typing 'npm i <dependency-name> (just type actual dependency name, no need for the brackets).
 3. Once these have finished installing, start running app by typing 'npm start' into command line. This will open the app in your browser. It may take some time, be patient and watch for any errors in your terminal. 
 
 ## Lessons Learned
@@ -78,6 +79,7 @@ My original vision for MIM was to have an interactive map of the body, with clic
 ## Contact Info
 
 [Github] (https://www.github.com/sstockall)
+
 [LinkedIn] (https://www.linkedin.com/in/samantha-stockall/)
 
 [Email] (sam.stockall@hotmail.com)
