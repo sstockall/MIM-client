@@ -114,10 +114,13 @@
             text-transform: uppercase;
             transition: all 0.25s ease-in-out;
             border-left: 2px solid $color1;
+            background-color: $cloud;
+            padding-right: 8rem;
 
             &:hover, &.active {
                 color: $color2;
                 border-left: 2px solid $color2;
+                background-color: $background-blue;
             }
         }
     }

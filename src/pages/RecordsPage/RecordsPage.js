@@ -6,10 +6,10 @@ import axios from 'axios';
 import NewMole from '../../components/NewMole/NewMole';
 
 function RecordsPage({ history }) {
-    const [isLoading, setIsLoading] = useState(true);
     const [userInfo, setUserInfo] = useState({});
     const [userRecords, setUserRecords] = useState([]);
     const [showModal, setShowModal] = useState(false);
+    const [loggedIn, setLoggedIn] = useState(false)
 
     useEffect(() => {
       window.scrollTo(0,0)
@@ -26,7 +26,7 @@ function RecordsPage({ history }) {
           .then(res => {
             setUserInfo(res.data.user);
             setUserRecords(res.data.records);
-            setIsLoading(false);
+            setLoggedIn(true);
           })
           .catch((err) => {
             console.log(err)
@@ -85,9 +85,14 @@ function RecordsPage({ history }) {
         .catch((err) => console.log(err))
     }
 
-    return isLoading ?
+    const handleLogout = () => {
+      sessionStorage.removeItem("token");
+      history.push('/');
+    }
+
+    return !loggedIn ?
         <div className='loading'>
-        <h2 className='loading__text'>Loading...</h2>
+        <h2 className='loading__text'>You must be <NavLink to='/login' className='loading__text-link'>logged in</NavLink> to view this page.</h2>
         </div>
     :
         ( 
@@ -107,14 +112,15 @@ function RecordsPage({ history }) {
               <NavLink to='/dashboard'className='records__nav-link'>Dashboard</NavLink>
             </div>
             <div className='records__nav-item'>
-              <span className='records__nav-link' onClick={toggleModal}>New Record</span>
-            </div>
-            <div className='records__nav-item'>
-              <span className='records__nav-link'>Terminology</span>
+              <span className='records__nav-link'onClick={handleLogout}>{loggedIn ? 'Log Out' : 'Log In'}</span>
             </div>
           </nav>
           <div className='records__header'>
               <h2 className='records__header-text'>Store All of Your Records in One Easy Place</h2>
+              <div className='records__header-subtext'>
+                <span className='records__header-directions'>To edit or delete a record, click on the specific record you would like to change.</span>
+                <span className='records__header-directions'>You can also create a <button className='records__header-button' onClick={toggleModal}>New Record</button></span>
+              </div>
           </div>
           <div className='records__list'>
             <h4 className='records__list-header'>Click on any of the cards below for more details.</h4>

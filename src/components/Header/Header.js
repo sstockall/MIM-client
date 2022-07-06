@@ -19,9 +19,6 @@ function Header() {
                 </div>
             </nav>
             <Logo />
-            <div className='header__login'>
-                <NavLink to='/login'>Login</NavLink>
-            </div>
         </header>
      );
 }

@@ -1,17 +1,16 @@
 import './DashboardPage.scss'
 import axios from 'axios';
-import diagram from '../../assets/images/anatomy-diagram.png'
 import NewMole from '../../components/NewMole/NewMole';
 import RecordList from '../../components/RecordList/RecordList';
 import { useState, useEffect } from "react";
 import { NavLink } from 'react-router-dom';
 import ABC from '../../assets/images/ABCDEs.jpg';
 
-function DashboardPage() {
-    const [isLoading, setIsLoading] = useState(true);
+function DashboardPage({ history }) {
     const [userInfo, setUserInfo] = useState({});
     const [userRecords, setUserRecords] = useState([]);
     const [showModal, setShowModal] = useState(false);
+    const [loggedIn, setLoggedIn] = useState(false)
 
     useEffect(() => {
       window.scrollTo(0,0)
@@ -28,7 +27,7 @@ function DashboardPage() {
           .then(res => {
             setUserInfo(res.data.user);
             setUserRecords(res.data.records);
-            setIsLoading(false);
+            setLoggedIn(true)
           })
           .catch((err) => {
             console.log(err)
@@ -93,9 +92,14 @@ function DashboardPage() {
         .catch((err) => console.log(err))
     }
 
-    return isLoading ?
+    const handleLogout = () => {
+      sessionStorage.removeItem("token");
+      history.push('/');
+    }
+
+    return !loggedIn ?
       <div className='loading'>
-        <h2 className='loading__text'>Loading...</h2>
+      <h2 className='loading__text'>You must be <NavLink to='/login' className='loading__text-link'>logged in</NavLink> to view this page.</h2>
       </div>
     :
       (
@@ -115,7 +119,7 @@ function DashboardPage() {
               <NavLink to='/records'className='dashboard__nav-link'>Records</NavLink>
             </div>
             <div className='dashboard__nav-item'>
-              <span className='dashboard__nav-link'>Terminology</span>
+              <span className='dashboard__nav-link' onClick={handleLogout}>{loggedIn ? 'Log Out' : 'Log In'}</span>
             </div>
           </nav>
           <section className='dashboard__hero'>

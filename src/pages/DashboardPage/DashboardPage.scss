@@ -3,8 +3,16 @@
 @use '../../styles/partials/mixins' as *;
 
 .loading {
-          
+    display: flex;
+    justify-content: center;
+    
     &__text {
+        @include inner-area;
+        padding: 1rem;
+        text-align: center;
+    }
+
+    &__text-link {
 
     }
 }
@@ -64,10 +72,7 @@
         align-items: center;
         width: 100%;
         padding: 1rem;
-
-        @include tablet {
-            justify-content: space-between;
-        }
+        justify-content: space-between;
     }
     
     &__hero-header {

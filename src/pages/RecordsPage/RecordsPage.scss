@@ -2,6 +2,21 @@
 @use '../../styles/partials/variables' as *;
 @use '../../styles/partials/mixins' as *;
 
+.loading {
+    display: flex;
+    justify-content: center;
+    
+    &__text {
+        @include inner-area;
+        padding: 1rem;
+        text-align: center;
+    }
+
+    &__text-link {
+
+    }
+}
+
 .records {
     display: flex;
     flex-direction: column;
@@ -15,7 +30,7 @@
     &__nav {
         @include inner-area;
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         background-color: $slate;
         width: 100%;
         margin-top: -0.5rem;
@@ -34,13 +49,31 @@
     }
 
     &__header {
-        @include inner-area;
+       display: flex;
+       flex-direction: column;
     }
 
     &__header-text {
         font-size: 1.2rem;
         text-align: center;
         padding: 0.5rem;
+    }
+
+    &__header-subtext {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__header-directions {
+        padding: 0 1rem;
+        font-size: $body-fontsize;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    &__header-button {
+        
     }
 
     &__list {

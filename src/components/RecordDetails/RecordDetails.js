@@ -113,7 +113,7 @@ function RecordDetails({ id, location, width, length, texture, coloring, special
                     </div>
                     <div className='record-details__section'>
                         <span className='record-details__text'>Coloring:</span>
-                        <span className='record-details__input'>{coloring.toUpperCase()}</span>
+                        <span className='record-details__input record-details__input--small'>{coloring.toUpperCase()}</span>
                     </div>
                     <div className='record-details__section record-details__section--special'>
                         <span className='record-details__text'>Special Info:</span>
