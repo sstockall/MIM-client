@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom'
 import axios from 'axios';
 import InputField from '../../components/InputField/InputField';
 import { useEffect } from 'react';
+import Header from '../../components/Header/Header';
 
 function LoginPage({ history }) {
 
@@ -25,6 +26,8 @@ function LoginPage({ history }) {
     };
 
     return ( 
+        <main>
+        <Header />
         <section className="login">
             <div className='login__inner'>
                 <div className='login__hero'>
@@ -48,6 +51,7 @@ function LoginPage({ history }) {
                 </form>
             </div>
         </section>
+        </main>
     );
 }
 

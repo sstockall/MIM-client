@@ -13,7 +13,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Header />
+        {/* <Header /> */}
         <Switch>
           <Route path='/' exact component={HomePage}/>
           <Route path='/login' exact component={LoginPage}/>

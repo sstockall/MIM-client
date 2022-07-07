@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import axios from 'axios';
 import NewMole from '../../components/NewMole/NewMole';
+import Header from '../../components/Header/Header';
 
 function RecordsPage({ history }) {
     const [userInfo, setUserInfo] = useState({});
@@ -90,7 +91,8 @@ function RecordsPage({ history }) {
         <h2 className='loading__text'>You must be <NavLink to='/login' className='loading__text-link'>logged in</NavLink> to view this page.</h2>
         </div>
     :
-        ( 
+        ( <main>
+          <Header />
         <section className="records">
           <NewMole 
             show={showModal}
@@ -117,6 +119,7 @@ function RecordsPage({ history }) {
             <h4 className='records__list-header records__list-header--bottom'>Scroll right to access your full skin profile</h4>
           </div>
         </section>
+        </main>
     );
 } 
 

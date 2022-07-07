@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { useEffect } from 'react';
 import axios from 'axios';
 import InputField from '../../components/InputField/InputField';
+import Header from '../../components/Header/Header';
 
 function SignUpPage({ history }) {
     
@@ -28,6 +29,8 @@ function SignUpPage({ history }) {
     };
 
         return ( 
+            <main>
+            <Header />
             <section className="signup">
                 <div className='signup__inner'>
                     <div className='signup__hero'>
@@ -53,6 +56,7 @@ function SignUpPage({ history }) {
                     </form>
                 </div>
             </section>
+            </main>
         );
     }
 

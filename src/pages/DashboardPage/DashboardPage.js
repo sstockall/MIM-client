@@ -5,6 +5,7 @@ import RecordList from '../../components/RecordList/RecordList';
 import { useState, useEffect } from "react";
 import { NavLink } from 'react-router-dom';
 import ABC from '../../assets/images/ABCDEs.jpg';
+import Header from '../../components/Header/Header';
 
 function DashboardPage({ history }) {
     const [userInfo, setUserInfo] = useState({});
@@ -97,7 +98,9 @@ function DashboardPage({ history }) {
       <h2 className='loading__text'>You must be <NavLink to='/login' className='loading__text-link'>logged in</NavLink> to view this page.</h2>
       </div>
     :
-      (
+      (  
+      <>
+        <Header />
         <main className='dashboard'>
           <NewMole 
             show={showModal}
@@ -154,6 +157,7 @@ function DashboardPage({ history }) {
               </div>
           </section>
         </main>
+        </>
       )
   }
 

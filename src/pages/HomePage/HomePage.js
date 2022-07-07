@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import { useEffect } from 'react';
 import './HomePage.scss';
+import Header from '../../components/Header/Header';
 
 function HomePage() {
 
@@ -9,7 +10,9 @@ function HomePage() {
     }, [])
 
     return ( 
+        
         <main className="home">
+            <Header />
             <section className='home__lower'>
                 <div className='home__hero'>
                     <h1 className='home__hero-header w3-animate-top'>MolesInMotion</h1>
