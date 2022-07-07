@@ -106,7 +106,9 @@
             }
 
             @include desktop {
-                margin-right: 2.5rem;
+                width: 50%;
+                height: 10rem;
+                margin-right: 2rem;
             }
         }
 
