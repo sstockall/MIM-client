@@ -3,11 +3,21 @@ import Record from '../Record/Record';
 
 function RecordList({ records, isRecordPage, updateRecords }) {
 
-    const dashboardArr = records.slice(0, 4);
+    const formatDate = (record) => {
+        return new Date(record.updated_at).getTime();
+    }
+
+    const sortedArr = records.sort((a,b) => {
+        return formatDate(b) - formatDate(a)
+    });
+    
+    const dashboardArr = sortedArr.slice(0, 4);
+    
+
     return isRecordPage ?  
         ( 
             <ul className='records-list'>
-                {records.map((record) => {
+                {sortedArr.map((record) => {
                     return <li
                         key={record.record_id}
                         className='records-list__item'

@@ -36,8 +36,8 @@ function LoginPage({ history }) {
                             <h2 className='login__form-header--text'>Sign in to your account</h2>
                         </div>
                         <div className='login__form-field'>
-                            <InputField className='signup__form-field'type="text" name="email" label="Email" />
-                            <InputField className='signup__form-field'type="password" name="password" label="Password" />
+                            <InputField className='signup__form-field'type="text" name="email" label="Email" required={true}/>
+                            <InputField className='signup__form-field'type="password" name="password" label="Password" required={true}/>
                         </div>
                     </div>
                     <div className='login__form-submit'>

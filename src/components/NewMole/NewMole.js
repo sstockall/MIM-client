@@ -1,6 +1,7 @@
 import './NewMole.scss'
 import InputField from '../InputField/InputField';
 import { useEffect } from 'react';
+import close from '../../assets/icons/close.svg';
 
 function NewMole( { show, submitHandler, hideModal, location, width, length, texture, coloring, special, create, buttonText, image, id }) {
     const showHideClass = show ? "new-mole display-block" : "new-mole display-none";
@@ -15,7 +16,8 @@ function NewMole( { show, submitHandler, hideModal, location, width, length, tex
                 <div className={modalType}>
                     <div className='new-mole__content'>
                         <div className='new-mole__header'>
-                            <h2 className='new-mole__header-text'>New Mole Record</h2>
+                            <img className='new-mole__close' src={close} alt='close' onClick={hideModal}/>
+                            <h2 className='new-mole__header-text'>{create ? 'New Mole Record' : 'Edit Record'}</h2>
                             <span className='new-mole__text'>Fill out few quick fields and we'll get the mole logged into your skin profile.</span>
                         </div>
                         <form className='new-mole__form' encType='multipart/form-data' onSubmit={submitHandler}>

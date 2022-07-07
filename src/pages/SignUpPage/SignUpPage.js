@@ -39,11 +39,11 @@ function SignUpPage({ history }) {
                             <h2 className='signup__form-header--text'>Create an account</h2>
                         </div>
                         <div className='signup__form-inputs'>
-                            <InputField className='signup__form-field'type="text" name="first_name" label="First Name" />
-                            <InputField className='signup__form-field'type="text" name="last_name" label="Last Name" />
+                            <InputField className='signup__form-field'type="text" name="first_name" label="First Name" required={true}/>
+                            <InputField className='signup__form-field'type="text" name="last_name" label="Last Name" required={true}/>
                             <InputField className='signup__form-field'type="text" name="username" label="Username" />
-                            <InputField className='signup__form-field'type="text" name="email" label="Email" />
-                            <InputField className='signup__form-field'type="password" name="password" label="Password" />
+                            <InputField className='signup__form-field'type="text" name="email" label="Email" required={true}/>
+                            <InputField className='signup__form-field'type="password" name="password" label="Password" required={true}/>
                         </div>
                         <div className='signup__form-submit'>
                             <button className='signup__form-button'>Create Account</button>

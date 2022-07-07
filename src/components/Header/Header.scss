@@ -18,6 +18,10 @@
     
     &__login {
         font-size: $body-fontsize;
+
+        &:hover {
+            cursor: pointer;
+        }
     }
 }
 
