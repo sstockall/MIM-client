@@ -104,6 +104,7 @@ function RecordsPage({ history }) {
               <div className='records__header-subtext'>
                 <span className='records__header-directions'>To edit or delete a record, click on the specific record you would like to change.</span>
                 <span className='records__header-directions'>You can also create a <button className='records__header-button' onClick={toggleModal}>New Record</button></span>
+                <span className='records__header-back'>Back to <NavLink to='/dashboard'>Dashboard</NavLink></span>
               </div>
           </div>
           <div className='records__list'>

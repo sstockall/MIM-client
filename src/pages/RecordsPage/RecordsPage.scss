@@ -24,39 +24,28 @@
     background-color: $light-grey;
 
     @include desktop {
-        padding: 0 8rem;
-    }
-
-    &__nav {
-        @include inner-area;
-        display: flex;
-        justify-content: space-around;
-        background-color: $slate;
-        width: 100%;
-        margin-top: -0.5rem;
-        padding: 0.5rem;
-    }
-
-    &__nav-link {
-        color: $light-grey;
-        font-size: $body-fontsize;
-        padding-bottom: 0.5rem;
-        padding: 0 0.5rem;
-
-        &:hover {
-            cursor: pointer;
-        }
+        flex-direction: row;
+        justify-content: center;
+        padding: 0 ;
     }
 
     &__header {
        display: flex;
        flex-direction: column;
+
+       @include desktop {
+        width: 40%;
+       }
     }
 
     &__header-text {
         font-size: 1.2rem;
         text-align: center;
         padding: 0.5rem;
+
+        @include desktop {
+            font-size: 2.7rem;
+        }
     }
 
     &__header-subtext {
@@ -70,10 +59,15 @@
         font-size: $body-fontsize;
         text-align: center;
         padding: 1rem;
+
+        @include desktop {
+            font-size: 1.5rem;
+        }
     }
 
-    &__header-button {
-        
+    &__header-back {
+        color: $slate;
+        font-size: 0.8rem;
     }
 
     &__list {
@@ -87,6 +81,10 @@
             max-height: 35rem;
             overflow-x: hidden;
             overflow-y: auto;
+        }
+
+        @include desktop {
+            width: 55%;
         }
     }
 
