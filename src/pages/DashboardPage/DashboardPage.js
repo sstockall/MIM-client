@@ -140,7 +140,6 @@ function DashboardPage({ history }) {
                 <section className='dashboard__signs'>
                   <h2 className='dashboard__signs-header'>Warning Signs</h2>
                   <span className='dashboard__signs-text'>Early detection is key in treating skin cancer. Below is a list of things to keep in mind when doing your self exams.</span>
-                  {/* <img className='dashboard__signs-img' src={ABC} alt='diagram' /> */}
                 </section>
               </div>
           </section>

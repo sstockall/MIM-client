@@ -85,11 +85,6 @@ function RecordsPage({ history }) {
         .catch((err) => console.log(err))
     }
 
-    const handleLogout = () => {
-      sessionStorage.removeItem("token");
-      history.push('/');
-    }
-
     return !loggedIn ?
         <div className='loading'>
         <h2 className='loading__text'>You must be <NavLink to='/login' className='loading__text-link'>logged in</NavLink> to view this page.</h2>
@@ -104,17 +99,6 @@ function RecordsPage({ history }) {
             buttonText='Create Record'
             create={true}
           />
-          <nav className='records__nav'>
-            <div className='records__nav-item'>
-              <NavLink to='/'className='records__nav-link'>Home</NavLink>
-            </div>
-            <div className='records__nav-item'>
-              <NavLink to='/dashboard'className='records__nav-link'>Dashboard</NavLink>
-            </div>
-            <div className='records__nav-item'>
-              <span className='records__nav-link'onClick={handleLogout}>{loggedIn ? 'Log Out' : 'Log In'}</span>
-            </div>
-          </nav>
           <div className='records__header'>
               <h2 className='records__header-text'>Store All of Your Records in One Easy Place</h2>
               <div className='records__header-subtext'>
