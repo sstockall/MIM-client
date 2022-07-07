@@ -92,11 +92,6 @@ function DashboardPage({ history }) {
         .catch((err) => console.log(err))
     }
 
-    const handleLogout = () => {
-      sessionStorage.removeItem("token");
-      history.push('/');
-    }
-
     return !loggedIn ?
       <div className='loading'>
       <h2 className='loading__text'>You must be <NavLink to='/login' className='loading__text-link'>logged in</NavLink> to view this page.</h2>
@@ -131,16 +126,31 @@ function DashboardPage({ history }) {
                 </div>
               </div>
               <div className='dashboard__wrapper'>
-                <div className='dashboard__terms'>
-                  <h2 className='dashboard__terms-header'>Be Specific</h2>
-                  <p className='dashboard__terms-text'>The more detail you put into a record, the easier it is to tell if anything's changed in the future.</p>
-                  <p className='dashboard__terms-text'>This can be a bit tricky, as medical speak can be confusing.</p>
-                  <p className='dashboard__terms-text'>To help with this, we've created a list of anatomical labelling terms to help you get as specific as you want to be.</p>
+                <div className='dashboard__tips'>
+                  <div className='dashboard__tips-text'>
+                    <h3 className='dashboard__tips-header'>Tips for Better Records</h3>
+                  </div>
+                  <div className='dashboard__terms'>
+                    <h2 className='dashboard__terms-header'>Be Specific</h2>
+                    <p className='dashboard__terms-text'>The more detail you put into a record, the easier it is to tell if anything's changed in the future.</p>
+                    <p className='dashboard__terms-text'>This can be a bit tricky, as medical speak can be confusing.</p>
+                    <p className='dashboard__terms-text'>To help with this, we've created a list of anatomical labelling terms to help you get as specific as you want to be.</p>
+                  </div>
+                  <div className='dashboard__pics'>
+                    <h2 className='dashboard__pics-header'>Clear Photos</h2>
+                    <p className='dashboard__pics-text'>Having a high resolution photo of your mole makes it easier to compare and note any differences in the future.</p>
+                    <p className='dashboard__pics-text'>It also helps to take photos that showcase the moles location, ensuring you are looking at the right mole when comparing.</p>
+                  </div>
                 </div>
-                <section className='dashboard__signs'>
+              </div>
+              <div className='dashboard__warnings'>
+                <div className='dashboard__warnings-text'>
+                  <h3 className='dashboard__warnings-header'>Watch For</h3>
+                </div>
+                <div className='dashboard__signs'>
                   <h2 className='dashboard__signs-header'>Warning Signs</h2>
                   <span className='dashboard__signs-text'>Early detection is key in treating skin cancer. Below is a list of things to keep in mind when doing your self exams.</span>
-                </section>
+                </div>
               </div>
           </section>
         </main>

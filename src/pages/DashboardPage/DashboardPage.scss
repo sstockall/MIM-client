@@ -24,7 +24,7 @@
     background-color: $light-grey;
 
     @include desktop {
-        padding: 0 7rem;
+        padding: 0 1rem;
     }
 
     &__lower {
@@ -34,14 +34,13 @@
 
         @include tablet {
             flex-direction: row;
-            flex-wrap: wrap;
             justify-content: center;
             align-items: baseline;
+            justify-content: space-between;
         }
 
         @include desktop {
-            flex-wrap: nowrap;
-            justify-content: space-between;
+           
         }
     }
 
@@ -51,11 +50,19 @@
         width: 100%;
         padding: 1rem;
         justify-content: space-between;
+
+        @include desktop {
+            padding: 1.5rem 4rem;
+        }
     }
     
     &__hero-header {
         font-size: 0.8rem;
         font-weight: 400;
+
+        @include desktop {
+            font-size: 1.3rem;
+        }
     }
 
     &__recent {
@@ -67,7 +74,7 @@
         }
 
         @include desktop {
-            
+            width: 20%;
         }
     }
 
@@ -81,9 +88,6 @@
         padding-left: 1rem;
         text-align: center;
 
-        @include tablet {
-            
-        }
     }  
     
     &__recent-span {
@@ -100,6 +104,37 @@
             flex-direction: row;
             align-items: baseline
         }
+
+        @include desktop {
+            flex-direction: column;
+            width: 50%;
+            
+        }
+    }
+
+    &__tips {
+        display: flex;
+        flex-direction: column;
+
+        @include desktop {
+            
+            align-items: center;
+        }
+    }
+
+    &__tips-text {
+
+        @include desktop {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            margin-top: 2rem;
+        }
+    }
+
+    &__tips-header {
+       font-size: 1.5rem;
+       text-align: center
     }
 
     &__terms {
@@ -110,13 +145,8 @@
         background-size: cover;
         background-blend-mode: multiply; 
 
-        @include tablet {
-            width: 45%;
-            margin: 0 1rem;
-        }
-
         @include desktop {
-            order: 2
+            padding: 2rem;
         }
     }
 
@@ -124,33 +154,94 @@
         font-size: 1.5rem;
         padding-bottom: 1rem;
         color: white;
+
+        @include desktop {
+            font-size: 3rem;
+        }
     }
 
     &__terms-text {
         font-size: $body-fontsize;
         padding-bottom: 0.5rem;
         font-weight: 400;
-        color: white
+        color: white;
+
+        @include desktop {
+            font-size: 1.2rem;
+            line-height: 2rem;
+        }
+    }
+
+    &__pics {
+        @include inner-area;
+        padding: 0.5rem 1rem;
+        background: url('../../assets/images/molecam.png') rgba(0, 0, 0, 0.7);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-blend-mode: multiply;
+        
+        @include desktop {
+            padding: 2rem;
+        }
+    }
+
+    &__pics-header {
+        font-size: 1.5rem;
+        padding-bottom: 1rem;
+        color: white;
+
+        @include desktop {
+            font-size: 3rem;
+        }
+    }
+
+    &__pics-text {
+        font-size: $body-fontsize;
+        padding-bottom: 0.5rem;
+        font-weight: 400;
+        color: white;
+
+        @include desktop {
+            font-size: 1.2rem;
+            line-height: 2rem;
+        }
+    }
+
+    &__warnings {
+
+        @include desktop {
+            @include inner-area;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 20%;
+        }
+    }
+
+    &__warnings-text {
+
+    }
+
+    &__warnings-header {
+        @include desktop {
+            font-size: 1.5rem;
+            text-align: center
+        }
     }
 
     &__signs {
-        @include inner-area;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
         padding: 1rem;
         background: url('../../assets/images/earlydet.jpeg');
         background-repeat: no-repeat;
         background-size: cover;
-        background-blend-mode: multiply;   
+        background-blend-mode: multiply;
+        margin-top: 1rem;   
+    }
 
-        @include tablet {
-            width: 45%;
-            margin: 1rem;
-        }
+    &__signs-header {
 
         @include desktop {
-            order: 1
+            font-size: 3rem;
         }
     }
 
@@ -159,6 +250,10 @@
         font-size: $body-fontsize;
         font-weight: 400;
         padding: 1rem 0;
+
+        @include desktop {
+            font-size: 1.5rem;
+        }
     }
 
     &__signs-img {
