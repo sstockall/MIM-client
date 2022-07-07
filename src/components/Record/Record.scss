@@ -41,6 +41,10 @@
         color: white;
         font-weight: 800;
 
+        @include desktop {
+            font-size: 0.7rem;
+        }
+
         &:hover {
             cursor: pointer;
         }

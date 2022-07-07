@@ -9,8 +9,7 @@ function HomePage() {
         window.scrollTo(0,0)
     }, [])
 
-    return ( 
-        
+    return (
         <main className="home">
             <Header />
             <section className='home__lower'>
@@ -20,6 +19,9 @@ function HomePage() {
                 </div>
                 <div className='home__content'>
                     <div className='home__content-profile'>
+                        <div className='home__overlay'>
+                            <h2 className='home__overlay-header'>Keep Your Skin Profile Current</h2>
+                        </div>
                         <p className='home__info-text'>Keep your skin profile up to date with in-depth records for each individual mole. Be as specific as you want, with sections for:</p>
                         <ul className='home__info-list'>
                             <li className='home__list-item'>
@@ -49,7 +51,9 @@ function HomePage() {
                         </ul>
                     </div>
                     <div className='home__lesions'>
-                        <h2 className='home__lesions-header'>See A Spot You're Not Sure About? </h2>
+                        <div className='home__lesions-overlay'>
+                            <h2 className='home__lesions-header'>See A Spot You're Not Sure About? </h2>
+                        </div>
                         <span className='home__lesions-span'>
                             Take a look at our list of <NavLink to='/lesions' className='home__lesions-link'> common skin lesions</NavLink>, their characteristics, and treatment options.
                         </span>

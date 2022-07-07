@@ -75,12 +75,14 @@
 
         @include desktop {
             width: 20%;
+            border-right: 1px solid $primary-text;
         }
     }
 
     &__recent-text {
         display: flex;
         flex-direction: column;
+        padding: 0.5rem 0;
     }
 
     &__recent-header {
@@ -91,7 +93,9 @@
     
     &__recent-span {
         padding: 0.2rem 1rem;
-        font-size: 0.6rem;
+        font-size: 0.8rem;
+        color: $slate;
+        text-align: center;
     }
 
     &__wrapper {
@@ -143,10 +147,16 @@
         background-repeat: no-repeat;
         background-size: cover;
         background-blend-mode: multiply; 
+        position: relative;
 
         @include desktop {
-            padding: 2rem;
+            padding: 4rem;
         }
+    }
+
+    &__terms-overlay {
+        background: url('../../assets/images/arm.png') rgba(0, 0, 0, 0.7);
+        @include overlay;
     }
 
     &__terms-header {
@@ -178,10 +188,16 @@
         background-repeat: no-repeat;
         background-size: cover;
         background-blend-mode: multiply;
+        position: relative;
         
         @include desktop {
-            padding: 2rem;
+            padding: 4rem;
         }
+    }
+
+    &__pics-overlay {
+        background: url('../../assets/images/molecam.png') rgba(0, 0, 0, 0.7);
+        @include overlay;
     }
 
     &__pics-header {
@@ -207,18 +223,14 @@
     }
 
     &__warnings {
+        @include inner-area;
 
         @include desktop {
-            @include inner-area;
             display: flex;
             flex-direction: column;
             align-items: center;
             width: 20%;
         }
-    }
-
-    &__warnings-text {
-
     }
 
     &__warnings-header {
@@ -230,14 +242,25 @@
 
     &__signs {
         padding: 1rem;
-        background: url('../../assets/images/earlydet.jpeg');
+        background: url('../../assets/images/earlydet.jpeg') rgba(0, 0, 0, 0.4);
         background-repeat: no-repeat;
         background-size: cover;
         background-blend-mode: multiply;
-        margin-top: 1rem;   
+        margin-top: 1rem;
+        position: relative; 
+        display: flex;
+        justify-content: center;
+        align-items: center;  
+    }
+
+    &__signs-overlay {
+        background: url('../../assets/images/earlydet.jpeg') rgba(0, 0, 0, 0.4);
+        @include overlay;
     }
 
     &__signs-header {
+        color: white;
+        text-align: center;
 
         @include desktop {
             font-size: 3rem;
@@ -249,9 +272,11 @@
         font-size: $body-fontsize;
         font-weight: 400;
         padding: 1rem 0;
+        color: white;
 
         @include desktop {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
+            padding: 3rem 1rem;
         }
     }
 

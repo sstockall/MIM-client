@@ -12,12 +12,13 @@
     @include desktop {
         padding: 1rem 7rem
     }
-
-    &__nav {
-    }
     
     &__login {
         font-size: $body-fontsize;
+
+        @include desktop {
+            font-size: 1rem;
+        }
 
         &:hover {
             cursor: pointer;
