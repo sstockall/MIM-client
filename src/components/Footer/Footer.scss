@@ -9,17 +9,27 @@
     padding: 1rem;
 
     @include desktop {
-        padding: 1rem 7rem
+        padding: 1rem 7rem;
+        align-items: center;
     }
                 
     &__pages {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+
+        @include desktop {
+            flex-direction: row;
+        }
     }
 
     &__link {
         font-size: 0.5rem;
-        color: $primary-text
+        color: $primary-text;
+
+        @include desktop {
+            font-size: $body-fontsize;
+            margin-left: 0.5rem;
+        }
     }
 }

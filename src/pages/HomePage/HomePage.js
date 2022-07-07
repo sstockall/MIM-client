@@ -12,7 +12,7 @@ function HomePage() {
         <main className="home">
             <section className='home__lower'>
                 <div className='home__hero'>
-                    <h1 className='home__hero-header'>MolesInMotion</h1>
+                    <h1 className='home__hero-header w3-animate-top'>MolesInMotion</h1>
                     <p className='home__hero-text'>a mole tracking app to help keep your skin safe and your mind clear</p>
                 </div>
                 <div className='home__content'>

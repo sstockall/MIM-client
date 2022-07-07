@@ -33,6 +33,7 @@ function Header() {
             <nav className='header__nav'>
                 <div className="menu-wrapper">
                     <div className="menu">
+                        <label>MENU</label>
                         <ul className="nav-links">
                             <NavLink className='nav-links__link'to='/'><li>Home</li></NavLink>
                             <NavLink to='/dashboard'><li>Dashboard</li></NavLink>

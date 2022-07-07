@@ -14,7 +14,6 @@
     }
 
     &__nav {
-        // width: 40%;
     }
     
     &__login {
@@ -29,6 +28,7 @@
 
 .menu-wrapper {
     position: relative;
+    z-index: 5;
 }
 
 .menu {
@@ -93,11 +93,11 @@
     }
     
     &:hover::after, &.open::after {
-        transform: translate($bar-height/3.3, -5.5px) rotate(405deg);
+        transform: translate($bar-height/3.2, -5.5px) rotate(405deg);
     }
     
     &:hover::before, &.open::before {
-        transform: translate($bar-height*3.8 ,7px) rotate(-405deg);
+        transform: translate($bar-height*3.7 ,7px) rotate(-405deg);
     }
     
     
@@ -120,14 +120,12 @@
             font-size: 1rem;
             text-transform: uppercase;
             transition: all 0.25s ease-in-out;
-            border-left: 2px solid $color1;
             background-color: $cloud;
-            padding-right: 8rem;
+            padding: 1rem 8rem 1rem 1rem;
 
             &:hover, &.active {
                 color: $color2;
-                border-left: 2px solid $color2;
-                background-color: $background-blue;
+                background-color: $primary-text;
             }
         }
     }
