@@ -94,17 +94,17 @@ function DashboardPage({ history }) {
     }
 
     return !loggedIn ?
-    <main>
-      <Header />
-      <div className='loading'>
-      <h2 className='loading__text'>You must be <NavLink to='/login' className='loading__text-link'>logged in</NavLink> to view this page.</h2>
-      </div>
+      <main>
+        <Header />
+        <div className='loading'>
+          <h2 className='loading__text'>You must be <NavLink to='/login' className='loading__text-link'>logged in</NavLink> to view this page.</h2>
+        </div>
       </main>
     :
       (  
-      <>
+      <main className='dashboard'>
         <Header />
-        <main className='dashboard'>
+        <section className='dashboard__upper'>
           <NewMole 
             show={showModal}
             hideModal={cancelRecord}
@@ -112,10 +112,10 @@ function DashboardPage({ history }) {
             buttonText='Create Record'
             create={true}
           />
-          <section className='dashboard__hero'>
+          <div className='dashboard__hero'>
             <h1 className='dashboard__hero-header'>welcome back {userInfo.first_name}!</h1>
             <button onClick={newRecord}>New Mole?</button>
-          </section>
+          </div>
           <section className='dashboard__lower'>
               <div className='dashboard__recent'>
                 <h2 className='dashboard__recent-header'>Recent Records</h2>
@@ -164,9 +164,9 @@ function DashboardPage({ history }) {
                 </div>
               </div>
           </section>
-        </main>
-        </>
-      )
+        </section>
+      </main>
+    )
   }
 
 export default DashboardPage;

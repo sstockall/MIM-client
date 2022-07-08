@@ -45,7 +45,6 @@ function Header() {
             </nav>
             <Logo />
             <span className='header__login' onClick={handleLogout}>{!loggedIn ? 'Log In' : 'Log Out'}</span>
-            
         </header>
      );
 }

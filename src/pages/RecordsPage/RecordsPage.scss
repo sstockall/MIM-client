@@ -18,20 +18,24 @@
 }
 
 .records {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: $light-grey;
 
-    @include desktop {
-        flex-direction: row;
-        justify-content: center;
-        padding: 4rem 0 ;
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: $light-grey;
+
+        @include desktop {
+            flex-direction: row;
+            justify-content: center;
+            padding: 4rem 0 ;
+        }
     }
 
     &__header {
        display: flex;
        flex-direction: column;
+       padding-top: 1rem;
 
        @include desktop {
         width: 40%;
@@ -58,7 +62,7 @@
         padding: 0 1rem;
         font-size: $body-fontsize;
         text-align: center;
-        padding: 1rem;
+        padding: 0.5rem;
 
         @include desktop {
             font-size: 1.5rem;
@@ -67,7 +71,11 @@
 
     &__header-back {
         color: $slate;
-        font-size: 0.8rem;
+        font-size: $body-fontsize; 
+
+        @include desktop {
+            font-size: 0.8rem
+        }
     }
 
     &__list {

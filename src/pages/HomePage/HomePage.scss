@@ -22,6 +22,7 @@
     &__hero {
         @include inner-area;
         padding: 1rem;
+        padding-bottom: 0;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -87,7 +88,7 @@
         background-repeat: no-repeat;
         background-size: cover;
         background-blend-mode: multiply; 
-        padding: 1rem;
+        padding: 2rem 1rem;
         position: relative;
 
         @include tablet {
@@ -109,10 +110,12 @@
     }
 
     &__overlay-header {
+        text-align: center;
+        margin: 0 1rem;
 
         @include desktop {
+            margin: 0;
             font-size: 3rem;
-            text-align: center;
         }
     }
 
@@ -198,7 +201,7 @@
         background-repeat: no-repeat;
         background-size: cover;
         background-blend-mode: multiply;
-        padding: 2rem 1rem;
+        padding: 4rem 1rem;
         width: 100%;
 
         @include tablet {
@@ -222,10 +225,10 @@
     }
 
     &__lesions-header {
-        font-size: 1.2rem;
         padding: 0.5rem;
         text-align: center;
         color: white;
+        margin: 0 1rem;
 
         @include tablet {
             font-size: 1.8rem;

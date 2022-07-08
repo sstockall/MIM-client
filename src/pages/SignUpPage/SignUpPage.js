@@ -1,9 +1,10 @@
 import './SignUpPage.scss';
 import { NavLink } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 import InputField from '../../components/InputField/InputField';
 import Header from '../../components/Header/Header';
+import InvalidMessage from '../../components/InvalidMessage/InvalidMessage';
 
 function SignUpPage({ history }) {
     
@@ -11,8 +12,32 @@ function SignUpPage({ history }) {
         window.scrollTo(0,0)
     }, [])
 
+    const [valid, setValid] = useState(true)
+    const [validFirstName, setValidFirstName] = useState(true)
+    const [validLastName, setValidLastName] = useState(true)
+    const [validEmail, setValidEmail] = useState(true)
+    const [validPassword, setValidPassword] = useState(true)
+
     const handleSignUp = (e) => {
         e.preventDefault();
+        if (!e.target.first_name.value) {
+            setValidFirstName(false)
+            setValid(false)
+
+        } else if (!e.target.last_name.value) {
+            setValidLastName(false)
+            setValid(false)
+
+        } else if (!e.target.email.value) {
+            setValidEmail(false)
+            setValid(false)
+
+        } else if (!e.target.password.value) {
+            setValidPassword(false)
+            setValid(false)
+
+        } else
+
         axios
             .post("http://localhost:8080/signup", {
                 email: e.target.email.value,
@@ -28,6 +53,8 @@ function SignUpPage({ history }) {
             .catch((err) => console.error(err));
     };
 
+    console.log(validLastName)
+
         return ( 
             <main>
             <Header />
@@ -42,11 +69,18 @@ function SignUpPage({ history }) {
                             <h2 className='signup__form-header--text'>Create an account</h2>
                         </div>
                         <div className='signup__form-inputs'>
-                            <InputField className='signup__form-field'type="text" name="first_name" label="First Name" required={true}/>
-                            <InputField className='signup__form-field'type="text" name="last_name" label="Last Name" required={true}/>
-                            <InputField className='signup__form-field'type="text" name="username" label="Username" />
-                            <InputField className='signup__form-field'type="text" name="email" label="Email" required={true}/>
-                            <InputField className='signup__form-field'type="password" name="password" label="Password" required={true}/>
+                            <InputField type="text" name="first_name" label="First Name" />
+                            <InvalidMessage isValid={validFirstName} />
+                            <InputField type="text" name="last_name" label="Last Name"/>
+                            <InvalidMessage isValid={validLastName} />
+                            <InputField type="text" name="username" label="Username" />
+                            <InputField type="text" name="email" label="Email" />
+                            <InvalidMessage isValid={validEmail} />
+                            <InputField type="password" name="password" label="Password" />
+                            <InvalidMessage isValid={validPassword} />
+                        </div>
+                        <div className='signup__validation'>
+                            <span className='signup__validation-text'>{valid ? '' : 'Please fill out all required fields'}</span>
                         </div>
                         <div className='signup__form-submit'>
                             <button className='signup__form-button'>Create Account</button>

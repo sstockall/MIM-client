@@ -75,6 +75,26 @@
         padding: 0.5rem;
     }
 
+    &__status {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1rem;
+
+        &--reg {
+            text-align: center;
+            font-weight: 400;
+            font-size: $body-fontsize;
+        }
+
+        &--err {
+            color: red;
+            text-align: center;
+            font-weight: 400;
+            font-size: $body-fontsize
+
+        }
+    }
+
     &__form-submit {
         display: flex;
         flex-direction: column;

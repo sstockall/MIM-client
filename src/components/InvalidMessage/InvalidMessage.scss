@@ -1,0 +1,22 @@
+@use '../../styles/global' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.error-message {
+    display: flex;
+    margin-top: -0.5rem;
+    
+    &__icon {
+        margin-right: 0.25rem;
+        margin-top: -0.2rem;
+        width: 1rem;
+    }
+    &__message {
+        font-size: 0.6rem;
+        margin: 0;
+        color: red;
+    }
+    &--hidden {
+        display: none;
+    }
+}

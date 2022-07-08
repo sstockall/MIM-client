@@ -61,11 +61,11 @@ function HomePage() {
                 </div>
             </section>
             <div className='home__cta'>
-                    <NavLink to='/signup' className='home__cta-link'>Sign Up</NavLink>
-                    <span className='home__cta-text'>now and get started on your mole map today!</span>
+                <NavLink to='/signup' className='home__cta-link'>Sign Up</NavLink>
+                <span className='home__cta-text'>now and get started on your mole map today!</span>
             </div>
         </main>
-     );
+    );
 }
 
 export default HomePage;

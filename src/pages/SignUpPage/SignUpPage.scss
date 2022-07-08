@@ -71,6 +71,17 @@
         }
     }
 
+    &__validation {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 1rem;
+    }
+
+    &__validation-text {
+        font-size: 0.7rem;
+        color: red;
+    }
+
     &__form-submit {
         display: flex;
         flex-direction: column;

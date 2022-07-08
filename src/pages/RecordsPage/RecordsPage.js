@@ -87,40 +87,44 @@ function RecordsPage({ history }) {
     }
 
     return !loggedIn ?
+      <main>
+        <Header />
         <div className='loading'>
-        <h2 className='loading__text'>You must be <NavLink to='/login' className='loading__text-link'>logged in</NavLink> to view this page.</h2>
-        </div>
+          <h2 className='loading__text'>You must be <NavLink to='/login' className='loading__text-link'>logged in</NavLink> to view this page.</h2>
+      </div>
+  </main>
     :
-        ( <main>
+      ( 
+        <main className='records'>
           <Header />
-        <section className="records">
-          <NewMole 
-            show={showModal}
-            hideModal={toggleModal}
-            submitHandler={submitRecord}
-            buttonText='Create Record'
-            create={true}
-          />
-          <div className='records__header'>
-              <h2 className='records__header-text'>Store All of Your Records in One Easy Place</h2>
-              <div className='records__header-subtext'>
-                <span className='records__header-directions'>To edit or delete a record, click on the specific record you would like to change.</span>
-                <span className='records__header-directions'>You can also create a <button className='records__header-button' onClick={toggleModal}>New Record</button></span>
-                <span className='records__header-back'>Back to <NavLink className='records__header-back--link' to='/dashboard'>Dashboard</NavLink></span>
-              </div>
-          </div>
-          <div className='records__list'>
-            <h4 className='records__list-header'>Click on any of the cards below for more details.</h4>
-            <RecordList 
-              records={userRecords}
-              isRecordPage={true}
-              updateRecords={updateRecords}
+          <section className="records__content">
+            <NewMole 
+              show={showModal}
+              hideModal={toggleModal}
+              submitHandler={submitRecord}
+              buttonText='Create Record'
+              create={true}
             />
-            <h4 className='records__list-header records__list-header--bottom'>Scroll right to access your full skin profile</h4>
-          </div>
-        </section>
+            <div className='records__header'>
+                <h2 className='records__header-text'>Store All of Your Records in One Easy Place</h2>
+                <div className='records__header-subtext'>
+                  <span className='records__header-directions'>To edit or delete a record, click on the specific record you would like to change.</span>
+                  <span className='records__header-directions'>You can also create a <button className='records__header-button' onClick={toggleModal}>New Record</button></span>
+                  <span className='records__header-back'>Back to <NavLink className='records__header-back--link' to='/dashboard'>Dashboard</NavLink></span>
+                </div>
+            </div>
+            <div className='records__list'>
+              <h4 className='records__list-header'>Click on any of the cards below for more details.</h4>
+              <RecordList 
+                records={userRecords}
+                isRecordPage={true}
+                updateRecords={updateRecords}
+              />
+              <h4 className='records__list-header records__list-header--bottom'>Scroll right to access your full skin profile</h4>
+            </div>
+          </section>
         </main>
-    );
+      );
 } 
 
 export default RecordsPage;

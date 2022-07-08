@@ -8,6 +8,7 @@
 
     &__label {
         margin-bottom: 0.3rem;
+        margin-top: 0.3rem;
         text-align: left;
         font-size: 0.8rem;
     }
@@ -23,8 +24,11 @@
         width: 100%;
         border: 1px solid $slate;
 
-        @include tablet {
-            width: 10rem;
+        &--err {
+            border: 1px solid red;
+            border-radius: 4px;
+            padding: 0.5rem;
+            font-size: 0.8rem;
         }
     }
 }

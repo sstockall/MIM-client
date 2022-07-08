@@ -1,6 +1,5 @@
 import './App.scss';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import DashboardPage from './pages/DashboardPage/DashboardPage';
 import LoginPage from './pages/LoginPage/LoginPage';
@@ -13,7 +12,6 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        {/* <Header /> */}
         <Switch>
           <Route path='/' exact component={HomePage}/>
           <Route path='/login' exact component={LoginPage}/>

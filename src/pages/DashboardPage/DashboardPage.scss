@@ -18,13 +18,16 @@
 }
 
 .dashboard {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: $light-grey;
 
-    @include desktop {
-        padding: 0 1rem;
+    &__upper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: $light-grey;
+
+        @include desktop {
+            padding: 0 1rem;
+        }
     }
 
     &__lower {
@@ -67,10 +70,15 @@
 
     &__recent {
         @include inner-area;
+        border-bottom: 1px solid $primary-text;
+        padding-bottom: 0.5rem;
 
         @include tablet {
+            display: flex;
+            flex-direction: column;
             align-items: center;
             margin: 1rem;
+            border-bottom: none;
         }
 
         @include desktop {
@@ -105,22 +113,28 @@
 
         @include tablet {
             flex-direction: row;
-            align-items: baseline
+            align-items: baseline;
         }
 
         @include desktop {
             flex-direction: column;
-            width: 50%;
-            
+            width: 50%; 
         }
     }
 
     &__tips {
         display: flex;
         flex-direction: column;
+        align-items: center;
+        margin: 0 1rem;
+        border-bottom: 1px solid $primary-text;
+        padding-bottom: 0.5rem;
+
+        @include tablet {
+            border-bottom: none;
+        }
 
         @include desktop {
-            
             align-items: center;
         }
     }
@@ -132,22 +146,30 @@
             flex-direction: column;
             width: 100%;
             margin-top: 2rem;
+
+            @include tablet {
+                flex-direction: row;
+            }
         }
     }
 
     &__tips-header {
        font-size: 1.5rem;
-       text-align: center
+       text-align: center;
     }
 
     &__terms {
         @include inner-area;
-        padding: 0.5rem 1rem;
         background: url('../../assets/images/arm.png') rgba(0, 0, 0, 0.7);
         background-repeat: no-repeat;
         background-size: cover;
         background-blend-mode: multiply; 
         position: relative;
+        padding: 2rem 0;
+
+        @include tablet {
+            margin-top: 2.5rem;
+        }
 
         @include desktop {
             padding: 4rem;
@@ -171,13 +193,14 @@
 
     &__terms-text {
         font-size: $body-fontsize;
-        padding-bottom: 0.5rem;
-        font-weight: 400;
+        padding: 0.5rem 1rem;
+        font-weight: 600;
         color: white;
 
         @include desktop {
             font-size: 1.2rem;
             line-height: 2rem;
+            font-weight: 400;
         }
     }
 
@@ -189,6 +212,7 @@
         background-size: cover;
         background-blend-mode: multiply;
         position: relative;
+        padding: 3rem 0;
         
         @include desktop {
             padding: 4rem;
@@ -212,28 +236,31 @@
 
     &__pics-text {
         font-size: $body-fontsize;
-        padding-bottom: 0.5rem;
-        font-weight: 400;
+        padding: 0.5rem 1rem;
+        font-weight: 600;
         color: white;
 
         @include desktop {
             font-size: 1.2rem;
             line-height: 2rem;
+            font-weight: 400;
         }
     }
 
     &__warnings {
         @include inner-area;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
         @include desktop {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
             width: 20%;
         }
     }
 
     &__warnings-header {
+        font-size: 1.5rem;
+
         @include desktop {
             font-size: 1.5rem;
             text-align: center
@@ -241,7 +268,6 @@
     }
 
     &__signs {
-        padding: 1rem;
         background: url('../../assets/images/earlydet.jpeg') rgba(0, 0, 0, 0.4);
         background-repeat: no-repeat;
         background-size: cover;
@@ -251,6 +277,12 @@
         display: flex;
         justify-content: center;
         align-items: center;  
+        padding: 4.5rem 0;
+
+        @include tablet {
+            margin: 0 2rem;
+            margin-top: 4.3rem;
+        }
     }
 
     &__signs-overlay {
@@ -270,13 +302,14 @@
     &__signs-text {
         text-align: center;
         font-size: $body-fontsize;
-        font-weight: 400;
-        padding: 1rem 0;
+        font-weight: 600;
+        padding: 1rem;
         color: white;
 
         @include desktop {
             font-size: 1.2rem;
             padding: 3rem 1rem;
+            font-weight: 400;
         }
     }
 
