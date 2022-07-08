@@ -11,10 +11,6 @@
         padding: 1rem;
         text-align: center;
     }
-
-    &__text-link {
-
-    }
 }
 
 .dashboard {
@@ -40,10 +36,6 @@
             justify-content: center;
             align-items: baseline;
             justify-content: space-between;
-        }
-
-        @include desktop {
-           
         }
     }
 

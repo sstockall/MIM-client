@@ -4,10 +4,9 @@ import NewMole from '../../components/NewMole/NewMole';
 import RecordList from '../../components/RecordList/RecordList';
 import { useState, useEffect } from "react";
 import { NavLink } from 'react-router-dom';
-import ABC from '../../assets/images/ABCDEs.jpg';
 import Header from '../../components/Header/Header';
 
-function DashboardPage({ history }) {
+function DashboardPage() {
     const [userInfo, setUserInfo] = useState({});
     const [userRecords, setUserRecords] = useState([]);
     const [showModal, setShowModal] = useState(false);

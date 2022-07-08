@@ -5,7 +5,7 @@ import Logo from '../Logo/Logo';
 function Footer() {
     return ( 
         <footer className="footer">
-             <Logo />
+            <Logo />
             <div className='footer__pages'>
                 <NavLink to='/' className='footer__link'>Home</NavLink>
                 <NavLink to='/' className='footer__link'>Glossary</NavLink>
