@@ -32,7 +32,6 @@ function RecordDetails({ id, location, width, length, texture, coloring, special
     const deleteRecord = () => {
         axios.delete(`https://moles-in-motion.herokuapp.com/dashboard/${id}`)
         .then((res) => {
-            console.log(res)
             toggleDelete()
             closeModal()
             updateRecords()
