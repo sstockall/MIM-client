@@ -30,7 +30,7 @@ function RecordDetails({ id, location, width, length, texture, coloring, special
     }
 
     const deleteRecord = () => {
-        axios.delete(`https://moles-in-motion.herokuapp.com/dashboard/${id}`)
+        axios.delete(`https://moles-in-motion-api.herokuapp.com/dashboard/${id}`)
         .then((res) => {
             toggleDelete()
             closeModal()
@@ -41,7 +41,7 @@ function RecordDetails({ id, location, width, length, texture, coloring, special
 
     const editRecord = (e) => {
         e.preventDefault();
-        axios.put(`https://moles-in-motion.herokuapp.com/dashboard/${id}`, {
+        axios.put(`https://moles-in-motion-api.herokuapp.com/dashboard/${id}`, {
             location: e.target.location.value,
             width: e.target.width.value,
             length: e.target.length.value,
