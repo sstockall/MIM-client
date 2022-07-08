@@ -22,7 +22,7 @@ function NewMole( { show, submitHandler, hideModal, location, width, length, tex
                     </div>
                     <form className='new-mole__form' encType='multipart/form-data' onSubmit={submitHandler}>
                         <div className='new-mole__inputs'>
-                            <InputField className='new-mole__form-field'type="file" name="image" label="Image" />
+                            <InputField className='new-mole__form-field'type="file" name="image" label="Image" multiple={true}/>
                             <InputField className='new-mole__form-field'type="location" name="location" label="Location" placeholder="Right upper arm, left cheek..." defaultValue={location}/>
                             <InputField className='new-mole__form-field'type="text" name="width" label="Width" placeholder="0.5cm, 2mm..." defaultValue={width}/>
                             <InputField className='new-mole__form-field'type="text" name="length" label="Length" placeholder="2cm, 3mm..." defaultValue={length}/>

@@ -27,7 +27,7 @@ function Record({ id, location, width, length, texture, coloring, special, date,
                 updateRecords={updateRecords}
             />
             <div className='record__image'>
-                <img className='record__image--pic' src={image} alt='pic' />
+                <img className='record__image--pic' src={image} alt='pic' onClick={toggleCard}/>
                 <span className='record__text' onClick={toggleCard}>{location.toUpperCase()}</span>
             </div>
         </div>
