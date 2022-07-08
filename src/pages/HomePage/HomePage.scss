@@ -170,12 +170,11 @@
             @include tablet {
                 width: 30%;
                 font-size: 0.8rem;
-                margin-right: 1rem;
+                margin-right: 3.5rem
             }
 
             @include desktop {
                 font-size: 1.2rem;
-                margin-right: 3.5rem;
             }
         }
 
@@ -207,7 +206,6 @@
         @include tablet {
             width: 40%;
             margin: 0;
-            justify-content: flex-end;
         }
 
         @include desktop {

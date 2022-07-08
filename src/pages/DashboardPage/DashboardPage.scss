@@ -141,15 +141,16 @@
 
     &__tips-text {
 
-        @include desktop {
+        @include tablet {
             display: flex;
+            flex-direction: row;
+        }
+
+        @include desktop {
+           
             flex-direction: column;
             width: 100%;
             margin-top: 2rem;
-
-            @include tablet {
-                flex-direction: row;
-            }
         }
     }
 
@@ -172,6 +173,7 @@
         }
 
         @include desktop {
+            margin-top: 4.2rem;
             padding: 4rem;
         }
     }
