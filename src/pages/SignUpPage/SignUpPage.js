@@ -39,7 +39,7 @@ function SignUpPage({ history }) {
         } else
 
         axios
-            .post("http://localhost:8080/signup", {
+            .post("https://moles-in-motion-api.herokuapp.com/signup", {
                 email: e.target.email.value,
                 password: e.target.password.value,
                 first_name: e.target.first_name.value,

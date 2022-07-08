@@ -17,7 +17,7 @@ function LoginPage({ history }) {
     const handleLogin = (e) => {
         e.preventDefault()
         axios
-            .post('http://localhost:8080/login', {
+            .post('https://moles-in-motion-api.herokuapp.com/login', {
                 email: e.target.email.value,
                 password: e.target.password.value
             })

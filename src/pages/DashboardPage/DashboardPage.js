@@ -20,7 +20,7 @@ function DashboardPage({ history }) {
     let getUser = () => {
       let token = sessionStorage.getItem('token');
         if (!!token) {
-          axios.get('http://localhost:8080/dashboard', {
+          axios.get('https://moles-in-motion-api.herokuapp.com/dashboard', {
             headers: {
               Authorization: `Bearer ${token}`
             }
@@ -42,7 +42,7 @@ function DashboardPage({ history }) {
 
     let updateRecords = () => {
       let token = sessionStorage.getItem('token');
-      axios.get('http://localhost:8080/dashboard', {
+      axios.get('https://moles-in-motion-api.herokuapp.com/dashboard', {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -70,10 +70,10 @@ function DashboardPage({ history }) {
       formData.append("image", e.target.image.files[0]);
       formData.append('upload_preset', 'phk0eezk')
       
-      axios.post('http://localhost:8080/images', formData)
+      axios.post('https://moles-in-motion-api.herokuapp.com/images', formData)
         .then((res) => {
           console.log(res)
-          axios.post('http://localhost:8080/dashboard/records', {
+          axios.post('https://moles-in-motion-api.herokuapp.com/dashboard/records', {
             image_url: res.data.path,
             location: e.target.location.value,
             width: e.target.width.value,
