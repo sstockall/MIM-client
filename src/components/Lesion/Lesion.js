@@ -3,9 +3,9 @@ import './Lesion.scss'
 function Lesion({id, image, name, description, treatments, status }) {
     return ( 
         <div className='lesion'>
-            {/* <div className='lesion__overlay'>
+            <div className='lesion__overlay'>
                 <h2 className='lesion__header'>{name}</h2>
-            </div> */}
+            </div>
             <div className='lesion__text'>
                 <div className='lesion__upper-section'>
                     <img className='lesion__image' src={image} alt='pic' />

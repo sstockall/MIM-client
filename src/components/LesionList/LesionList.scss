@@ -3,10 +3,24 @@
 @use '../../styles/partials/mixins' as *;
 
 .lesion-list {
+
+    @include tablet {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
     
     &__item {
         display: flex;
         flex-direction: column;
         align-items: center;
+
+        @include tablet {
+            width: 50%;
+        }
+
+        @include desktop {
+            width: 30%;
+        }
     }
 }
