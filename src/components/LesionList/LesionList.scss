@@ -1,0 +1,12 @@
+@use '../../styles/global' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.lesion-list {
+    
+    &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}

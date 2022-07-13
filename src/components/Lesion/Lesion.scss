@@ -1,0 +1,50 @@
+@use '../../styles/global' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+
+.lesion {
+    @include inner-area;
+    position: relative;
+    padding: 0 2rem;
+
+    &__overlay {
+
+    }
+    
+    &__text {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+
+    &__upper-section {
+        padding-bottom: 1rem;   
+    }
+
+    &__image {
+        float: left;
+        width: 40%;
+        margin-right: 1rem;
+        margin-top: 0.1rem;  
+        
+    }
+
+    &__lower-section {
+        display: flex;
+        justify-content: space-around;
+        width: 100%; 
+    }
+    
+    &__title {
+        color: $slate;
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        margin-bottom: 0.3rem;
+    }
+
+    &__input {
+        font-size: 0.8rem;
+    }
+}

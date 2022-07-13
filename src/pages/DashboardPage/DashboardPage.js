@@ -10,7 +10,7 @@ function DashboardPage() {
     const [userInfo, setUserInfo] = useState({});
     const [userRecords, setUserRecords] = useState([]);
     const [showModal, setShowModal] = useState(false);
-    const [loggedIn, setLoggedIn] = useState(false)
+    const [loggedIn, setLoggedIn] = useState(false);
 
     useEffect(() => {
       window.scrollTo(0,0)
@@ -56,11 +56,14 @@ function DashboardPage() {
 
     const newRecord = () => {
       setShowModal(true);
+      document.body.style.overflow = 'hidden';
+
     }
 
     const cancelRecord = (e) => {
       e.preventDefault();
       setShowModal(false);
+      document.body.style.overflow = 'unset'
     }
 
     const submitRecord = (e) => {
@@ -85,11 +88,12 @@ function DashboardPage() {
           .then((res) => {
             e.target.reset();
             setShowModal(false);
+            document.body.style.overflow = 'unset'
             updateRecords();  
           })
           .catch((err) => console.error(err));
         })
-        .catch((err) => console.log(err))
+        .catch((err) => console.log(err));
     }
 
     return !loggedIn ?

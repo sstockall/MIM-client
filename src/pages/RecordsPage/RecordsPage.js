@@ -47,16 +47,14 @@ function RecordsPage({ history }) {
         }
       })
       .then(res => {
-        console.log(res)
         setUserRecords(res.data.records);
       })
-      .catch((err) => {
-        console.log(err)
-      })
+      .catch((err) => console.error(err))
     }
     
     const toggleModal = () => {
       !showModal ? setShowModal(true) : setShowModal(false)
+      showModal ?  document.body.style.overflow = 'unset' : document.body.style.overflow = 'hidden';
     }
     const submitRecord = (e) => {
       e.preventDefault();

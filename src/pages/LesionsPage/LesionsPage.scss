@@ -1,0 +1,25 @@
+@use '../../styles/global' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.lesions {
+   
+    &__content {
+    
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__header {
+        text-align: center;
+    }
+
+    &__text {
+        text-align: center;
+        
+    }
+}

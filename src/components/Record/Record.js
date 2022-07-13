@@ -8,6 +8,7 @@ function Record({ id, location, width, length, texture, coloring, special, date,
 
     const toggleCard = () => {
         !showRecord ? setShowRecord(true) : setShowRecord(false);
+        !showRecord ? document.body.style.overflow = 'hidden' : document.body.style.overflow = 'unset';
     }
 
     return ( 

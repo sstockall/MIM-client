@@ -14,19 +14,21 @@ function RecordDetails({ id, location, width, length, texture, coloring, special
     
     const [deleteModal, setDeleteModal] = useState(false); 
     const [editModal, setEditModal] = useState(false);
+    const [modalPresent, setModalPresent] = useState(false)
 
     useEffect(() => {
         window.scrollTo(0,0)
       }, [])
 
     const toggleDelete = () => {
-        !deleteModal ? setDeleteModal(true) : setDeleteModal(false)
-        console.log(deleteModal)
+        !deleteModal ? setDeleteModal(true) : setDeleteModal(false);
+        !deleteModal ? setModalPresent(true) : setModalPresent(false);
     }
 
     const toggleEdit = () => {
-        !editModal ? setEditModal(true) : setEditModal(false)
-        console.log(editModal)
+        !editModal ? setEditModal(true) : setEditModal(false);
+        !editModal ? setModalPresent(true) : setModalPresent(false);
+       
     }
 
     const deleteRecord = () => {
@@ -59,7 +61,7 @@ function RecordDetails({ id, location, width, length, texture, coloring, special
 
     return ( 
         <div className={showHideClass}>
-            <div className='record-details__main'>
+            <div className={!modalPresent ? 'record-details__main' : 'record-details__noscroll'}>
                 <DeleteModal 
                     show={deleteModal}
                     deleteRecord={deleteRecord}
@@ -76,7 +78,7 @@ function RecordDetails({ id, location, width, length, texture, coloring, special
                     coloring={coloring}
                     special={special}
                     image={image}
-                    buttonText='Edit'
+                    buttonText='Edit Record'
                     create={false}
                 />
                 <div className='record-details__buttons'>
