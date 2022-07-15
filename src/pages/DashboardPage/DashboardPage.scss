@@ -252,7 +252,7 @@
         align-items: center;
 
         @include desktop {
-            width: 20%;
+            width: 25%;
         }
     }
 
@@ -291,7 +291,7 @@
     &__signs-header {
         color: white;
         text-align: center;
-
+        
         @include desktop {
             font-size: 3rem;
         }

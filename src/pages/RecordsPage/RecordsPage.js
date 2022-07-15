@@ -78,6 +78,7 @@ function RecordsPage({ history }) {
             e.target.reset();
             setShowModal(false);
             updateRecords();  
+            document.body.style.overflow = 'unset';
           })
           .catch((err) => console.error(err));
         })

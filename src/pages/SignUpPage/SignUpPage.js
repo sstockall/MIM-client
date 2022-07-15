@@ -2,6 +2,7 @@ import './SignUpPage.scss';
 import { NavLink } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import validator from 'validator';
 import InputField from '../../components/InputField/InputField';
 import Header from '../../components/Header/Header';
 import InvalidMessage from '../../components/InvalidMessage/InvalidMessage';
@@ -12,11 +13,33 @@ function SignUpPage({ history }) {
         window.scrollTo(0,0)
     }, [])
 
-    const [valid, setValid] = useState(true)
-    const [validFirstName, setValidFirstName] = useState(true)
-    const [validLastName, setValidLastName] = useState(true)
-    const [validEmail, setValidEmail] = useState(true)
-    const [validPassword, setValidPassword] = useState(true)
+    const [valid, setValid] = useState(true);
+    const [validFirstName, setValidFirstName] = useState(true);
+    const [validLastName, setValidLastName] = useState(true);
+    const [validEmail, setValidEmail] = useState(true);
+    const [emailError, setEmailError] = useState('');
+    const [validPassword, setValidPassword] = useState(true);
+    const [passwordError, setPasswordError] = useState('');
+
+    const validateEmail = (e) => {
+        let email = e.target.value
+    
+        if (validator.isEmail(email)) {
+        setEmailError('')
+        } else {
+        setEmailError('Please enter valid email!')
+        }
+    }
+
+    const validatePassword = (e) => {
+        let password = e.target.value
+    
+        if (validator.isStrongPassword(password)) {
+        setPasswordError('')
+        } else {
+        setPasswordError('Please enter valid password!')
+        }
+    }
 
     const handleSignUp = (e) => {
         e.preventDefault();
@@ -53,10 +76,8 @@ function SignUpPage({ history }) {
             .catch((err) => console.error(err));
     };
 
-    console.log(validLastName)
-
-        return ( 
-            <main>
+    return ( 
+        <main>
             <Header />
             <section className="signup">
                 <div className='signup__inner'>
@@ -65,7 +86,7 @@ function SignUpPage({ history }) {
                         <h2 className='signup__hero-header2'>Your Moles Today!</h2>
                     </div>
                     <form className="signup__form" onSubmit={handleSignUp}>
-                        <div className='singup__form-header'>
+                        <div className='signup__form-header'>
                             <h2 className='signup__form-header--text'>Create an account</h2>
                         </div>
                         <div className='signup__form-inputs'>
@@ -74,9 +95,11 @@ function SignUpPage({ history }) {
                             <InputField type="text" name="last_name" label="Last Name"/>
                             <InvalidMessage isValid={validLastName} />
                             <InputField type="text" name="username" label="Username" />
-                            <InputField type="text" name="email" label="Email" />
+                            <InputField type="text" name="email" label="Email" onChange={(e) => validateEmail(e)}/>
+                            <span className='signup__form-error'>{emailError}</span>
                             <InvalidMessage isValid={validEmail} />
-                            <InputField type="password" name="password" label="Password" />
+                            <InputField type="password" name="password" label="Password" onChange={(e) => validatePassword(e)}/>
+                            <span className='signup__form-error'>{passwordError}</span>
                             <InvalidMessage isValid={validPassword} />
                         </div>
                         <div className='signup__validation'>
@@ -90,9 +113,9 @@ function SignUpPage({ history }) {
                     </form>
                 </div>
             </section>
-            </main>
-        );
-    }
+        </main>
+    );
+}
 
 
 export default SignUpPage;
