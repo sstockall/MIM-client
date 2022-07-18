@@ -9,7 +9,7 @@ function LesionsPage() {
     const [lesions, setLesions] = useState([])
 
     const getLesions = () => {
-        axios.get('http://localhost:8080/lesions')
+        axios.get('https://moles-in-motion-api.herokuapp.com/lesions')
             .then((res) => {
                 setLesions(res.data.lesion)
             })
